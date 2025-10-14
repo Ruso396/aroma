@@ -7,7 +7,8 @@ import HotelLandingPage from './pages/About';
 import ContactPage from './pages/Contact';
 import ResortBookingForm from './pages/Login';
 import RoomListing from './pages/Rooms';
-
+import GrandoriaAmenities from './pages/grandoria-amenities';
+import GrandoriaLocation from './pages/grandoria-location';
 
 const App: React.FC = () => {
   return (
@@ -21,6 +22,8 @@ const App: React.FC = () => {
             <Route path="ContactPage" element={<ContactPage/>}/>
             <Route path="ResortBookingForm" element={<ResortBookingForm/>}/>
             <Route path="RoomListing" element={<RoomListing/>}/>
+             <Route path="GrandoriaAmenities" element={<GrandoriaAmenities />} />
+            <Route path="GrandoriaLocation" element={<GrandoriaLocation />} />
            
           </Routes>
         </main>
