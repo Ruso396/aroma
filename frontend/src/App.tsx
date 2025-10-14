@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/Home';
+import HotelLandingPage from './pages/About';
+import ContactPage from './pages/Contact';
+import ResortBookingForm from './pages/Login';
+import RoomListing from './pages/Rooms';
 
 
 const App: React.FC = () => {
@@ -13,6 +17,10 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="HotelLandingPage"element={<HotelLandingPage/>}/>
+            <Route path="ContactPage" element={<ContactPage/>}/>
+            <Route path="ResortBookingForm" element={<ResortBookingForm/>}/>
+            <Route path="RoomListing" element={<RoomListing/>}/>
            
           </Routes>
         </main>
