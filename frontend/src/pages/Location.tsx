@@ -97,7 +97,7 @@ export default function Location() {
     }
   ];
 
-  return (
+ return (
     <div className="min-h-screen bg-white mt-10">
       <style>{`
         @keyframes fadeInUp {
@@ -193,7 +193,7 @@ export default function Location() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
           {/* Contact Info */}
           <div className={`${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
-            <div className=" rounded-3xl p-8 ">
+            <div className="rounded-3xl p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-8">Contact & Details</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4 group">

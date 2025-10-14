@@ -25,11 +25,11 @@ export default function ResortBookingForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+   <div className="min-h-screen bg-gray-50">
 
 
       {/* Main Content */}
-      <div className="relative">
+    <div className="relative pt-32">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
