@@ -27,8 +27,8 @@ export default function ContactPage() {
       {/* Map Section */}
       <div className="w-full h-[500px]">
         <iframe
-          title="India Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61528907.427434295!2d60.942!3d20.593684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ffef8bff0fb%3A0xa0f6b9c6e11d1f3d!2sIndia!5e0!3m2!1sen!2sin!4v1696931503000!5m2!1sen!2sin"
+          title="Namakkal Location Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62585.89876543211!2d78.1344!3d11.2189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bab617c4e46e7f9%3A0x4f1b9b9b9b9b9b9b!2sNamakkal%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1696931503000!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}
