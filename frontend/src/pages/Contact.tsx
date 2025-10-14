@@ -22,16 +22,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-800">Contact</h1>
-          <nav className="flex gap-6">
-            <a href="#" className="text-gray-600 hover:text-gray-800">Home</a>
-            <a href="#" className="text-gray-800 font-medium">Contact</a>
-          </nav>
-        </div>
-      </header>
+   
 
       {/* Map Section */}
       <div className="relative w-full h-96 bg-blue-100">

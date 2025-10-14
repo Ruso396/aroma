@@ -137,16 +137,7 @@ const RoomListing: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-gray-900">Rooms</h1>
-          <nav className="flex gap-6">
-            <a href="#" className="text-gray-600 hover:text-gray-900">Home</a>
-            <a href="#" className="text-gray-900 font-medium">Rooms</a>
-          </nav>
-        </div>
-      </header>
+      
 
       {/* Filters */}
       <div className="max-w-7xl mx-auto px-4 py-8">

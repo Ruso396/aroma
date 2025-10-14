@@ -7,29 +7,35 @@ import HotelLandingPage from './pages/About';
 import ContactPage from './pages/Contact';
 import ResortBookingForm from './pages/Login';
 import RoomListing from './pages/Rooms';
-import GrandoriaAmenities from './pages/grandoria-amenities';
-import GrandoriaLocation from './pages/grandoria-location';
-import HotelBooking from './pages/bookingdetails';
+import Location from './pages/Location';
+import HotelBooking from './pages/HotelBooking';
 import RoomDetails from './pages/RoomDetails';
+import Amenities from './pages/Amenities';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-white flex flex-col">
+      <div className="min-h-screen flex flex-col ">
+        {/* Header is always visible */}
         <Header />
-        <main className="flex-grow">
+
+        {/* Main content */}
+        <main className="flex-grow ">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="HotelLandingPage" element={<HotelLandingPage />} />
-            <Route path="ContactPage" element={<ContactPage />} />
-            <Route path="ResortBookingForm" element={<ResortBookingForm />} />
-            <Route path="RoomListing" element={<RoomListing />} />
-            <Route path="GrandoriaAmenities" element={<GrandoriaAmenities />} />
-            <Route path="GrandoriaLocation" element={<GrandoriaLocation />} />
-            <Route path="HotelBooking" element={<HotelBooking />} />
-            <Route path="RoomDetails" element={<RoomDetails />} />
+            <Route path="/about" element={<HotelLandingPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/login" element={<ResortBookingForm />} />
+            <Route path="/rooms" element={<RoomListing />} />
+            <Route path="/amenities" element={<Amenities />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/booking" element={<HotelBooking />} />
+            <Route path="/room-details" element={<RoomDetails />} />
+            {/* fallback route */}
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
+
         <Footer />
       </div>
     </Router>

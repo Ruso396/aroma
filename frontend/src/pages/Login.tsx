@@ -26,20 +26,7 @@ export default function ResortBookingForm() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white text-sm font-bold">
-              R
-            </div>
-            <span className="font-semibold text-gray-800">eBooking</span>
-          </div>
-          <div className="text-sm text-gray-600">
-            September 23, 2018
-          </div>
-        </div>
-      </header>
+
 
       {/* Main Content */}
       <div className="relative">

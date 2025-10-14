@@ -13,17 +13,7 @@ export default function RoomDetails() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white border-b">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-800">Room Details</h1>
-          <div className="flex gap-4 text-sm text-gray-600">
-            <button className="hover:text-gray-900">Home</button>
-            <span>/</span>
-            <button className="hover:text-gray-900">Room Details</button>
-          </div>
-        </div>
-      </header>
+      
 
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Main Room Section */}

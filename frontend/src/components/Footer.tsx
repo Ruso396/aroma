@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2">
-            <a href="/" className="text-2xl font-bold mb-4 inline-block">Grandoria</a>
+            <a href="/" className="text-2xl font-bold mb-4 inline-block">Aroma</a>
             <div className="space-y-2 text-gray-400">
               <p>A108 Adam Street</p>
               <p>New York, NY 535022</p>
@@ -61,8 +61,7 @@ const Footer: React.FC = () => {
 
       <div className="border-t border-gray-800 py-6">
         <div className="container mx-auto px-4 text-center text-gray-400 text-sm">
-          <p>© Copyright <strong className="text-white">Grandoria</strong>. All Rights Reserved</p>
-          <p className="mt-1">Designed by <a href="https://bootstrapmade.com/" className="text-amber-500 hover:underline">BootstrapMade</a></p>
+          <p>© Copyright <strong className="text-white">Aroma</strong>. All Rights Reserved</p>
         </div>
       </div>
     </footer>

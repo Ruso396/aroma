@@ -2,23 +2,43 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Mail, Phone } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
+  // Paths where the header should be initially transparent
+  const transparentHeaderPaths = ['/', '/amenities'];
+  const isTransparentPage = transparentHeaderPaths.includes(location.pathname);
+
+  // Detect scroll
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const links = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Rooms', path: '/rooms' },
+    { label: 'Amenities', path: '/amenities' },
+    { label: 'Location', path: '/location' },
+    { label: 'Contact', path: '/contact' },
+  ];
+
+  // Determine colors based on transparency and scroll state
+  const headerBg = isTransparentPage && !isScrolled ? 'bg-transparent' : 'bg-white shadow-lg';
+  const topBarBg = isTransparentPage && !isScrolled ? 'bg-black/30 text-white' : 'bg-white text-gray-800';
+  const navTextColor = isTransparentPage && !isScrolled ? 'text-white' : 'text-gray-800';
+  const navHoverColor = isTransparentPage && !isScrolled ? 'hover:text-amber-300' : 'hover:text-amber-600';
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all ${isScrolled ? 'shadow-lg' : ''}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all ${headerBg}`}>
       {/* Top Bar */}
-      <div className="bg-gray-900 text-white py-2">
+      <div className={`py-2 transition-colors ${topBarBg}`}>
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
             <a href="mailto:contact@example.com" className="flex items-center gap-2 hover:text-amber-500 transition">
@@ -31,42 +51,42 @@ const Header: React.FC = () => {
             </a>
           </div>
           <div className="hidden md:flex items-center gap-3">
-            <a href="#" className="hover:text-amber-500 transition">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-            <a href="#" className="hover:text-amber-500 transition">
-              <FontAwesomeIcon icon={faFacebookF} />
-            </a>
-            <a href="#" className="hover:text-amber-500 transition">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="#" className="hover:text-amber-500 transition">
-              <FontAwesomeIcon icon={faLinkedinIn} />
-            </a>
+            <a href="#" className="hover:text-amber-500 transition"><FontAwesomeIcon icon={faTwitter} /></a>
+            <a href="#" className="hover:text-amber-500 transition"><FontAwesomeIcon icon={faFacebookF} /></a>
+            <a href="#" className="hover:text-amber-500 transition"><FontAwesomeIcon icon={faInstagram} /></a>
+            <a href="#" className="hover:text-amber-500 transition"><FontAwesomeIcon icon={faLinkedinIn} /></a>
           </div>
         </div>
       </div>
 
-      {/* Main Navigation */}
-      <div className="bg-white">
+      {/* Main Nav */}
+      <div className="transition-colors">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            <a href="/" className="text-2xl font-bold text-gray-800">Aroma</a>
+            <Link
+              to="/"
+              className={`text-2xl font-bold transition-colors ${navTextColor}`}
+            >
+              Aroma
+            </Link>
 
             {/* Desktop Menu */}
             <nav className="hidden lg:flex items-center gap-8">
-              <a href="/" className="text-gray-700 hover:text-amber-600 transition font-medium">Home</a>
-              <a href="HotelLandingPage" className="text-gray-700 hover:text-amber-600 transition font-medium">About</a>
-              <a href="RoomListing" className="text-gray-700 hover:text-amber-600 transition font-medium">Rooms</a>
-              <a href="GrandoriaAmenities" className="text-gray-700 hover:text-amber-600 transition font-medium">Amenities</a>
-              <a href="GrandoriaLocation" className="text-gray-700 hover:text-amber-600 transition font-medium">Location</a>
-              <a href="ContactPage" className="text-gray-700 hover:text-amber-600 transition font-medium">Contact</a>
+              {links.map((link) => (
+                <Link
+                  key={link.label}
+                  to={link.path}
+                  className={`transition-colors font-medium ${navTextColor} ${navHoverColor}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden text-gray-700 hover:text-amber-600"
+              className={`lg:hidden transition-colors ${navTextColor}`}
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -75,12 +95,15 @@ const Header: React.FC = () => {
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
             <nav className="lg:hidden pb-4 space-y-3">
-              <a href="/" className="block text-gray-700 hover:text-amber-600 transition font-medium py-2">Home</a>
-              <a href="#about" className="block text-gray-700 hover:text-amber-600 transition font-medium py-2">About</a>
-              <a href="#rooms" className="block text-gray-700 hover:text-amber-600 transition font-medium py-2">Rooms</a>
-              <a href="#amenities" className="block text-gray-700 hover:text-amber-600 transition font-medium py-2">Amenities</a>
-              <a href="#location" className="block text-gray-700 hover:text-amber-600 transition font-medium py-2">Location</a>
-              <a href="#contact" className="block text-gray-700 hover:text-amber-600 transition font-medium py-2">Contact</a>
+              {links.map((link) => (
+                <Link
+                  key={link.label}
+                  to={link.path}
+                  className={`block py-2 font-medium transition ${navTextColor} ${navHoverColor}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           )}
         </div>
