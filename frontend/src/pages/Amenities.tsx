@@ -70,7 +70,7 @@ const amenities = [
   return (
     <div className="min-h-screen bg-gray-50">
 
-            <style>{`
+            <style> {`
         @keyframes fadeInUp {
           from {
             opacity: 0;
