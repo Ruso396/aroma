@@ -58,8 +58,8 @@ const Header: React.FC = () => {
               <a href="/" className="text-gray-700 hover:text-amber-600 transition font-medium">Home</a>
               <a href="#about" className="text-gray-700 hover:text-amber-600 transition font-medium">About</a>
               <a href="#rooms" className="text-gray-700 hover:text-amber-600 transition font-medium">Rooms</a>
-              <a href="#amenities" className="text-gray-700 hover:text-amber-600 transition font-medium">Amenities</a>
-              <a href="#location" className="text-gray-700 hover:text-amber-600 transition font-medium">Location</a>
+              <a href="GrandoriaAmenities" className="text-gray-700 hover:text-amber-600 transition font-medium">Amenities</a>
+              <a href="GrandoriaLocation" className="text-gray-700 hover:text-amber-600 transition font-medium">Location</a>
               <a href="#contact" className="text-gray-700 hover:text-amber-600 transition font-medium">Contact</a>
             </nav>
 
