@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, Wifi, Tv, Phone, Bed, Utensils, Car, Coffee, Waves } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface Room {
   id: number;
@@ -15,6 +16,7 @@ interface Room {
 }
 
 const RoomListing: React.FC = () => {
+  const navigate = useNavigate();
   const rooms: Room[] = [
     {
       id: 1,
@@ -137,7 +139,7 @@ const RoomListing: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      
+
 
       {/* Filters */}
       <div className="max-w-7xl mx-auto px-4 py-8">
@@ -215,7 +217,10 @@ const RoomListing: React.FC = () => {
                     <span className="text-2xl font-bold text-gray-900">${room.price}</span>
                     <span className="text-sm text-gray-500">{room.priceLabel}</span>
                   </div>
-                  <button className="bg-teal-800 hover:bg-teal-900 text-white px-5 py-2 rounded-md text-sm font-medium transition-colors">
+                  <button
+                    onClick={() => navigate('/room-details')}
+                    className="bg-teal-800 hover:bg-teal-900 text-white px-5 py-2 rounded-md text-sm font-medium transition-colors"
+                  >
                     View Details
                   </button>
                 </div>
