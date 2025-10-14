@@ -22,10 +22,22 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Breadcrumb Section */}
+      <div className="bg-white border-b mt-32" >
+        <div className="max-w-7xl mx-auto px-4  flex items-center justify-between">
+          <h1 className="text-3xl font-bold text-gray-800">Contact</h1>
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <a href="/" className="hover:text-teal-700">Home</a>
+            <span>/</span>
+            <span className="text-gray-800">Contact</span>
+          </div>
+        </div>
+      </div>
 
 
       {/* Map Section */}
       <div className="w-full h-[500px]">
+          
         <iframe
           title="Namakkal Location Map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62585.89876543211!2d78.1344!3d11.2189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bab617c4e46e7f9%3A0x4f1b9b9b9b9b9b9b!2sNamakkal%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1696931503000!5m2!1sen!2sin"
