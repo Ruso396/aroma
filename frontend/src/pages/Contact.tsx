@@ -22,28 +22,21 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-   
+
 
       {/* Map Section */}
-      <div className="relative w-full h-96 bg-blue-100">
-        <div className="w-full h-full flex items-center justify-center text-gray-500">
-          <div className="text-center">
-            <MapPin className="w-16 h-16 mx-auto mb-2 text-gray-400" />
-            <p>Map View - Downtown Conference Center</p>
-            <p className="text-sm">New York Area</p>
-          </div>
-        </div>
-        <div className="absolute top-4 left-4 bg-white rounded-lg shadow-md p-3">
-          <div className="text-sm font-semibold">Downtown Conference Center</div>
-          <div className="text-xs text-gray-600">121 William Street</div>
-          <div className="flex items-center gap-1 text-xs text-yellow-500 mt-1">
-            <span>4.3</span>
-            <span>★★★★☆</span>
-            <span className="text-gray-500">52 reviews</span>
-          </div>
-        </div>
+      <div className="w-full h-[500px]">
+        <iframe
+          title="India Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61528907.427434295!2d60.942!3d20.593684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ffef8bff0fb%3A0xa0f6b9c6e11d1f3d!2sIndia!5e0!3m2!1sen!2sin!4v1696931503000!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={true}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
-
       {/* Info Cards */}
       <div className="max-w-7xl mx-auto px-4 -mt-16 relative z-10">
         <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -74,7 +67,7 @@ export default function ContactPage() {
         {/* Contact Form */}
         <div className="bg-white rounded-lg shadow-sm p-8 mb-12">
           <h2 className="text-2xl font-bold text-center mb-8">Send a Message</h2>
-          
+
           <div className="max-w-2xl mx-auto">
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <input
@@ -94,7 +87,7 @@ export default function ContactPage() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </div>
-            
+
             <input
               type="text"
               name="subject"
@@ -103,7 +96,7 @@ export default function ContactPage() {
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-teal-500"
             />
-            
+
             <textarea
               name="message"
               placeholder="Your Message"
@@ -112,7 +105,7 @@ export default function ContactPage() {
               rows={6}
               className="w-full px-4 py-3 border border-gray-300 rounded-md mb-6 focus:outline-none focus:ring-2 focus:ring-teal-500 resize-none"
             />
-            
+
             <div className="text-center">
               <button
                 onClick={handleSubmit}

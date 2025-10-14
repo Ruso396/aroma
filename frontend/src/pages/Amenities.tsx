@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Wifi, Car, Plane, Headphones, Bell, Shield, MessageSquare, Heart } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; 
 
 // Custom SVG Icons
 const ClockIcon = () => (
@@ -24,6 +25,7 @@ const CocktailIcon = () => (
 
 // Main Amenities component
 const Amenities: React.FC = () => {
+  const navigate = useNavigate(); 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -149,10 +151,17 @@ const amenities = [
             Discover our world-class amenities designed to provide ultimate comfort and indulgence during your stay
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+            <button 
+              onClick={() => navigate('/booking')} // ✅ Navigate to booking.tsx
+              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+            >
               Book Your Stay
             </button>
-            <button className="bg-white/10 backdrop-blur-md border-2 border-white hover:bg-white/20 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+
+            <button 
+              onClick={() => navigate('/rooms')} // ✅ Navigate to rooms.tsx
+              className="bg-white/10 backdrop-blur-md border-2 border-white hover:bg-white/20 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+            >
               View All Rooms
             </button>
           </div>
@@ -258,12 +267,18 @@ const amenities = [
                 Book your stay today and discover why our guests return time and time again to experience our world-class amenities
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white hover:bg-gray-50 text-amber-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-                  Reserve Your Stay
-                </button>
-                <button className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">
-                  Contact Concierge
-                </button>
+                   <button 
+              onClick={() => navigate('/booking')} // ✅ Navigate to booking.tsx
+              className="bg-white hover:bg-gray-50 text-amber-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+            >
+              Reserve Your Stay
+            </button>
+            <button 
+              onClick={() => navigate('/contact')} // ✅ Navigate to contact.tsx
+              className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+            >
+              Contact Concierge
+            </button>
               </div>
             </div>
           </div>

@@ -249,31 +249,17 @@ export default function Location() {
           </div>
 
           {/* Map */}
-          <div className={`${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}>
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[500px] relative group">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="relative inline-block mb-4">
-                    <div className="absolute inset-0  opacity-30 animate-pulse"></div>
-                    <div className="relative bg-white rounded-full p-6 shadow-2xl">
-                      <MapPin className="w-16 h-16 text-red-500" />
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Downtown Conference Center</h3>
-                  <p className="text-gray-600 mb-3">456 Madison Street<br />Chicago, IL 60601</p>
-                  <div className="flex items-center justify-center gap-2 text-yellow-600 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-current" />
-                    ))}
-                    <span className="text-gray-700 font-semibold ml-2">45 reviews</span>
-                  </div>
-                  <button className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-emerald-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <Navigation className="w-5 h-5" />
-                    Get Directions
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div className="w-full h-[500px]">
+            <iframe
+              title="India Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61528907.427434295!2d60.942!3d20.593684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ffef8bff0fb%3A0xa0f6b9c6e11d1f3d!2sIndia!5e0!3m2!1sen!2sin!4v1696931503000!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
 
@@ -292,7 +278,7 @@ export default function Location() {
             {transportOptions.map((option, idx) => {
               const IconComponent = option.icon;
               return (
-                <div 
+                <div
                   key={idx}
                   className={`bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
@@ -314,7 +300,7 @@ export default function Location() {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {option.tags.map((tag, tagIdx) => (
-                      <span 
+                      <span
                         key={tagIdx}
                         className="inline-flex items-center gap-1 text-xs bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full font-medium border border-emerald-100"
                       >
@@ -342,16 +328,16 @@ export default function Location() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {attractions.map((attraction, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${0.7 + index * 0.1}s` }}
               >
                 <div className="relative overflow-hidden h-56">
-                  <img 
-                    src={attraction.image} 
-                    alt={attraction.name} 
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
+                  <img
+                    src={attraction.image}
+                    alt={attraction.name}
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute top-4 left-4">
