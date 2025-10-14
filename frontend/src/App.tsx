@@ -9,6 +9,8 @@ import ResortBookingForm from './pages/Login';
 import RoomListing from './pages/Rooms';
 import GrandoriaAmenities from './pages/grandoria-amenities';
 import GrandoriaLocation from './pages/grandoria-location';
+import HotelBooking from './pages/bookingdetails';
+import RoomDetails from './pages/RoomDetails';
 
 const App: React.FC = () => {
   return (
@@ -18,13 +20,14 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="HotelLandingPage"element={<HotelLandingPage/>}/>
-            <Route path="ContactPage" element={<ContactPage/>}/>
-            <Route path="ResortBookingForm" element={<ResortBookingForm/>}/>
-            <Route path="RoomListing" element={<RoomListing/>}/>
-             <Route path="GrandoriaAmenities" element={<GrandoriaAmenities />} />
+            <Route path="HotelLandingPage" element={<HotelLandingPage />} />
+            <Route path="ContactPage" element={<ContactPage />} />
+            <Route path="ResortBookingForm" element={<ResortBookingForm />} />
+            <Route path="RoomListing" element={<RoomListing />} />
+            <Route path="GrandoriaAmenities" element={<GrandoriaAmenities />} />
             <Route path="GrandoriaLocation" element={<GrandoriaLocation />} />
-           
+            <Route path="HotelBooking" element={<HotelBooking />} />
+            <Route path="RoomDetails" element={<RoomDetails />} />
           </Routes>
         </main>
         <Footer />
