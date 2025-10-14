@@ -97,7 +97,7 @@ export default function Location() {
     }
   ];
 
-  return (
+ return (
     <div className="min-h-screen bg-white mt-10">
       <style>{`
         @keyframes fadeInUp {
@@ -193,7 +193,7 @@ export default function Location() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
           {/* Contact Info */}
           <div className={`${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
-            <div className=" rounded-3xl p-8 ">
+            <div className="rounded-3xl p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-8">Contact & Details</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4 group">
@@ -250,29 +250,17 @@ export default function Location() {
 
           {/* Map */}
           <div className={`${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}>
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[500px] relative group">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="relative inline-block mb-4">
-                    <div className="absolute inset-0  opacity-30 animate-pulse"></div>
-                    <div className="relative bg-white rounded-full p-6 shadow-2xl">
-                      <MapPin className="w-16 h-16 text-red-500" />
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Downtown Conference Center</h3>
-                  <p className="text-gray-600 mb-3">456 Madison Street<br />Chicago, IL 60601</p>
-                  <div className="flex items-center justify-center gap-2 text-yellow-600 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-current" />
-                    ))}
-                    <span className="text-gray-700 font-semibold ml-2">45 reviews</span>
-                  </div>
-                  <button className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-emerald-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <Navigation className="w-5 h-5" />
-                    Get Directions
-                  </button>
-                </div>
-              </div>
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl h-full min-h-[400px] lg:min-h-[500px] relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.3547706707647!2d-87.62979768455385!3d41.88415497922108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca8b34aaaab%3A0x4c01c8b9b1bd213a!2s456%20N%20Madison%20St%2C%20Chicago%2C%20IL%2060601!5e0!3m2!1sen!2sus!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
         </div>
