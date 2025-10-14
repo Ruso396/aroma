@@ -22,10 +22,22 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Breadcrumb Section */}
+      <div className="bg-white border-b mt-32" >
+        <div className="max-w-7xl mx-auto px-4  flex items-center justify-between">
+          <h1 className="text-3xl font-bold text-gray-800">Contact</h1>
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <a href="/" className="hover:text-teal-700">Home</a>
+            <span>/</span>
+            <span className="text-gray-800">Contact</span>
+          </div>
+        </div>
+      </div>
 
 
       {/* Map Section */}
       <div className="w-full h-[500px]">
+          
         <iframe
           title="India Map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61528907.427434295!2d60.942!3d20.593684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ffef8bff0fb%3A0xa0f6b9c6e11d1f3d!2sIndia!5e0!3m2!1sen!2sin!4v1696931503000!5m2!1sen!2sin"
