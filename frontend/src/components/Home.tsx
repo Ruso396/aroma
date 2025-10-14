@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import homeVideo from "../assets/home.mp4"; // relative path from this file
-
+import { useNavigate } from "react-router-dom";
 
 const Homepage: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -14,12 +14,14 @@ const Homepage: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
   // Countdown Timer
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
     minutes: 0
   });
+
 
   useEffect(() => {
     const targetDate = new Date('2025-12-15').getTime();
@@ -41,44 +43,52 @@ const Homepage: React.FC = () => {
     const interval = setInterval(updateCountdown, 60000);
     return () => clearInterval(interval);
   }, []);
+  const navigate = useNavigate();
+
+  const handleViewRooms = () => {
+    navigate("/rooms"); // /rooms page-ku navigate aagum
+  };
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-       <section className="relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
-      <video
-  autoPlay
-  loop
-  muted
-  className="absolute top-0 left-0 w-full h-full object-cover"
-  src={homeVideo}
-/>
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          src={homeVideo}
+        />
 
-      {/* Overlay for darkening video */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
+        {/* Overlay for darkening video */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 flex flex-col justify-center items-start h-full max-w-7xl mx-auto px-6 lg:px-20 text-white">
-        <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fadeIn">
-          Luxury Redefined in Every Stay
-        </h1>
-        <p className="text-lg lg:text-xl mb-8 animate-fadeIn delay-200">
-          Experience unparalleled comfort and sophistication at our premium hotel.
-        </p>
-        <div className="flex gap-4 animate-fadeIn delay-400">
-          <button className="px-8 py-4 bg-blue-600 font-semibold rounded-lg hover:bg-blue-700 transition">
-            Book Now
-          </button>
-          <button className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition">
-            View Rooms
-          </button>
+        {/* Hero Content */}
+        <div className="relative z-10 flex flex-col justify-center items-start h-full max-w-7xl mx-auto px-6 lg:px-20 text-white">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fadeIn">
+            Luxury Redefined in Every Stay
+          </h1>
+          <p className="text-lg lg:text-xl mb-8 animate-fadeIn delay-200">
+            Experience unparalleled comfort and sophistication at our premium hotel.
+          </p>
+          <div className="flex gap-4 animate-fadeIn delay-400">
+            <button className="px-8 py-4 bg-blue-600 font-semibold rounded-lg hover:bg-blue-700 transition">
+              Book Now
+            </button>
+            <button
+              onClick={handleViewRooms}
+              className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition"
+            >
+              View Rooms
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* Inline Keyframes */}
-      <style>
-        {`
+        {/* Inline Keyframes */}
+        <style>
+          {`
           @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -93,8 +103,8 @@ const Homepage: React.FC = () => {
             animation-delay: 0.4s;
           }
         `}
-      </style>
-    </section>
+        </style>
+      </section>
 
       {/* About Section */}
       <section className="py-20 px-4 bg-white">
@@ -131,7 +141,10 @@ const Homepage: React.FC = () => {
                 <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
                   Our Story
                 </button>
-                <button className="px-6 py-3 bg-gray-100 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
+                <button
+                  onClick={handleViewRooms}
+                  className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition"
+                >
                   View Rooms
                 </button>
               </div>
@@ -476,11 +489,11 @@ const Homepage: React.FC = () => {
       </section> */}
 
 
-{/* Offers Section */}
-<section className="py-20 px-4 bg-white overflow-hidden">
-  {/* Inline Keyframes for Animation */}
-  <style>
-    {`
+      {/* Offers Section */}
+      <section className="py-20 px-4 bg-white overflow-hidden">
+        {/* Inline Keyframes for Animation */}
+        <style>
+          {`
       @keyframes fadeUp {
         0% {
           opacity: 0;
@@ -518,132 +531,132 @@ const Homepage: React.FC = () => {
         box-shadow: none !important;
       }
     `}
-  </style>
+        </style>
 
-  <div className="max-w-7xl mx-auto fade-up">
-    {/* Section Header */}
-    <div className="text-center mb-16">
-      <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">
-        Offers
-      </span>
-      <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">
-        Special Deals
-      </h2>
-      <p className="text-gray-600 max-w-2xl mx-auto">
-        Take advantage of our exclusive offers and packages
-      </p>
-    </div>
-
-    {/* Offer Cards */}
-    <div className="grid md:grid-cols-3 gap-10 mb-16">
-      {[
-        {
-          badge: "25% OFF",
-          title: "Weekend Getaway",
-          desc: "Escape the ordinary with our exclusive weekend package. Includes complimentary breakfast and late checkout.",
-          originalPrice: 299,
-          offerPrice: 224,
-          validity: "Valid until Dec 31, 2024",
-          image:
-            "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop",
-        },
-        {
-          badge: "BEST VALUE",
-          title: "Extended Stay Deal",
-          desc: "Stay 5 nights or more and enjoy significant savings. Perfect for business travelers and extended vacations.",
-          originalPrice: 189,
-          offerPrice: 149,
-          validity: "Book by Jan 15, 2025",
-          image:
-            "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
-        },
-        {
-          badge: "EARLY BIRD",
-          title: "Advance Booking",
-          desc: "Plan ahead and save more! Book your stay 30 days in advance with free cancellation up to 7 days.",
-          originalPrice: 249,
-          offerPrice: 199,
-          validity: "Available year-round",
-          image:
-            "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop",
-        },
-      ].map((offer, idx) => (
-        <div
-          key={idx}
-          className="offer-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
-        >
-          <div className="relative">
-            <img
-              src={offer.image}
-              alt={offer.title}
-              className="w-full h-56 object-cover transition-transform duration-500 hover:scale-105"
-            />
-            <div className="absolute top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">
-              {offer.badge}
-            </div>
+        <div className="max-w-7xl mx-auto fade-up">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">
+              Offers
+            </span>
+            <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">
+              Special Deals
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Take advantage of our exclusive offers and packages
+            </p>
           </div>
-          <div className="p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">
-              {offer.title}
-            </h3>
-            <p className="text-gray-600 mb-4">{offer.desc}</p>
-            <div className="mb-4">
-              <div className="flex items-baseline gap-3 mb-2">
-                <span className="text-2xl text-gray-400 line-through">
-                  ${offer.originalPrice}
-                </span>
-                <span className="text-3xl font-bold text-blue-600">
-                  ${offer.offerPrice}
-                </span>
-                <span className="text-sm text-gray-600">per night</span>
+
+          {/* Offer Cards */}
+          <div className="grid md:grid-cols-3 gap-10 mb-16">
+            {[
+              {
+                badge: "25% OFF",
+                title: "Weekend Getaway",
+                desc: "Escape the ordinary with our exclusive weekend package. Includes complimentary breakfast and late checkout.",
+                originalPrice: 299,
+                offerPrice: 224,
+                validity: "Valid until Dec 31, 2024",
+                image:
+                  "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop",
+              },
+              {
+                badge: "BEST VALUE",
+                title: "Extended Stay Deal",
+                desc: "Stay 5 nights or more and enjoy significant savings. Perfect for business travelers and extended vacations.",
+                originalPrice: 189,
+                offerPrice: 149,
+                validity: "Book by Jan 15, 2025",
+                image:
+                  "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
+              },
+              {
+                badge: "EARLY BIRD",
+                title: "Advance Booking",
+                desc: "Plan ahead and save more! Book your stay 30 days in advance with free cancellation up to 7 days.",
+                originalPrice: 249,
+                offerPrice: 199,
+                validity: "Available year-round",
+                image:
+                  "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop",
+              },
+            ].map((offer, idx) => (
+              <div
+                key={idx}
+                className="offer-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+              >
+                <div className="relative">
+                  <img
+                    src={offer.image}
+                    alt={offer.title}
+                    className="w-full h-56 object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">
+                    {offer.badge}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {offer.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">{offer.desc}</p>
+                  <div className="mb-4">
+                    <div className="flex items-baseline gap-3 mb-2">
+                      <span className="text-2xl text-gray-400 line-through">
+                        ${offer.originalPrice}
+                      </span>
+                      <span className="text-3xl font-bold text-blue-600">
+                        ${offer.offerPrice}
+                      </span>
+                      <span className="text-sm text-gray-600">per night</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <i className="fas fa-calendar-check"></i>
+                      <span>{offer.validity}</span>
+                    </div>
+                  </div>
+                  <button className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                    Book Now
+                  </button>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <i className="fas fa-calendar-check"></i>
-                <span>{offer.validity}</span>
+            ))}
+          </div>
+
+          {/* Limited Time Banner */}
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white shadow-2xl fade-up">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="flex-1">
+                <h2 className="text-3xl font-bold mb-4">Limited Time Offer</h2>
+                <p className="text-blue-100 text-lg">
+                  Don't miss out on our exclusive seasonal promotion. Book now and
+                  save up to 40% on your dream vacation with complimentary upgrades
+                  and special perks.
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-6">
+                <div className="flex gap-4">
+                  <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg px-6 py-4">
+                    <div className="text-4xl font-bold">{countdown.days}</div>
+                    <div className="text-sm text-blue-100">Days</div>
+                  </div>
+                  <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg px-6 py-4">
+                    <div className="text-4xl font-bold">{countdown.hours}</div>
+                    <div className="text-sm text-blue-100">Hours</div>
+                  </div>
+                  <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg px-6 py-4">
+                    <div className="text-4xl font-bold">{countdown.minutes}</div>
+                    <div className="text-sm text-blue-100">Minutes</div>
+                  </div>
+                </div>
+                <button className="px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                  Claim Offer
+                </button>
               </div>
             </div>
-            <button className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-              Book Now
-            </button>
           </div>
         </div>
-      ))}
-    </div>
-
-    {/* Limited Time Banner */}
-    <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white shadow-2xl fade-up">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div className="flex-1">
-          <h2 className="text-3xl font-bold mb-4">Limited Time Offer</h2>
-          <p className="text-blue-100 text-lg">
-            Don't miss out on our exclusive seasonal promotion. Book now and
-            save up to 40% on your dream vacation with complimentary upgrades
-            and special perks.
-          </p>
-        </div>
-        <div className="flex flex-col items-center gap-6">
-          <div className="flex gap-4">
-            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg px-6 py-4">
-              <div className="text-4xl font-bold">{countdown.days}</div>
-              <div className="text-sm text-blue-100">Days</div>
-            </div>
-            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg px-6 py-4">
-              <div className="text-4xl font-bold">{countdown.hours}</div>
-              <div className="text-sm text-blue-100">Hours</div>
-            </div>
-            <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg px-6 py-4">
-              <div className="text-4xl font-bold">{countdown.minutes}</div>
-              <div className="text-sm text-blue-100">Minutes</div>
-            </div>
-          </div>
-          <button className="px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
-            Claim Offer
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* Call to Action */}
@@ -672,7 +685,10 @@ const Homepage: React.FC = () => {
                 <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg">
                   Book Your Stay
                 </button>
-                <button className="px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600 transition-colors">
+                <button
+                  onClick={handleViewRooms}
+                  className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition"
+                >
                   View Rooms
                 </button>
               </div>
