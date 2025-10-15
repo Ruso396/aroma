@@ -23,6 +23,7 @@ const App: React.FC = () => {
         <main className="flex-grow ">
           <Routes>
             <Route path="/" element={<HomePage />} />
+          
             <Route path="/about" element={<HotelLandingPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/login" element={<ResortBookingForm />} />

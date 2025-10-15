@@ -21,7 +21,125 @@ const CocktailIcon = () => (
   </svg>
 );
 
-// ... (Add other custom icons here, same as your previous code)
+const updatedAmenities = [
+  {
+    icon: 'fa-dumbbell',
+    title: '24-Hour Fitness Center',
+    desc: 'Access our state-of-the-art **Gym** facility anytime, day or night.',
+    features: ['24-hour', 'Health and Wellness'],
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop' // Existing Gym image
+  },
+  {
+    icon: 'fa-utensils',
+    title: 'Signature Restaurant',
+    desc: 'Enjoy fine dining at our **Restaurant** with award-winning culinary experiences.',
+    features: ['Fine Dining', 'Food and Drinks'],
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop' // Existing Restaurant image
+  },
+  // Basic Facilities
+  {
+    icon: 'fa-smoking',
+    title: 'Smoking Rooms',
+    desc: 'Designated rooms available for guests who require smoking facilities.',
+    features: ['Basic Facilities'],
+    image: 'https://images.unsplash.com/photo-1607525389650-7058204b4c71?w=400&h=300&fit=crop' // New placeholder image (generic interior)
+  },
+  {
+    icon: 'fa-concierge-bell',
+    title: 'Limited Room Service',
+    desc: 'Convenient **Room Service** available during specific hours.',
+    features: ['Limited duration', 'Basic Facilities'],
+    image: 'https://images.unsplash.com/photo-1583275330396-e3d6f14088a8?w=400&h=300&fit=crop' // New placeholder image (food service)
+  },
+  {
+    icon: 'fa-newspaper',
+    title: 'Complimentary Newspaper',
+    desc: 'Stay informed with a complimentary **Newspaper** available in the local language.',
+    features: ['Local Language', 'Basic Facilities'],
+    image: 'https://images.unsplash.com/photo-1585822956691-236f011500d0?w=400&h=300&fit=crop' // New placeholder image (newspaper)
+  },
+  {
+    icon: 'fa-parking',
+    title: 'Free Onsite Parking',
+    desc: 'Complimentary and secure **Free Parking** facility located onsite.',
+    features: ['Free - Onsite', 'Basic Facilities'],
+    image: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=400&h=300&fit=crop' // Existing Parking image
+  },
+  {
+    icon: 'fa-tshirt',
+    title: 'Laundry Service',
+    desc: 'Professional **Laundry Service** is available, with a limit of free pieces.',
+    features: ['Paid', 'Limited Pieces Free'],
+    image: 'https://images.unsplash.com/photo-1582226279930-bc66e5108269?w=400&h=300&fit=crop' // New placeholder image (laundry)
+  },
+  {
+    icon: 'fa-wifi',
+    title: 'Free High-Speed Wi-Fi',
+    desc: 'Complimentary **Free Wi-Fi** with a speed suitable for working and streaming.',
+    features: ['Free', 'Suitable for working'],
+    image: 'https://images.unsplash.com/photo-1551721434-8b94ddff0e6d?w=400&h=300&fit=crop' // Existing Wi-Fi image
+  },
+  {
+    icon: 'fa-clock',
+    title: 'Limited Duration Reception',
+    desc: 'Our **Reception** desk is available to assist you during scheduled operating hours.',
+    features: ['Limited Duration', 'Basic Facilities'],
+    image: 'https://images.unsplash.com/photo-1517840921200-984e49df0a54?w=400&h=300&fit=crop' // New placeholder image (reception)
+  },
+  // General Services
+  {
+    icon: 'fa-suitcase',
+    title: 'Luggage Assistance',
+    desc: 'Professional service for managing and transferring your **Luggage** upon arrival and departure.',
+    features: ['General Services'],
+    image: 'https://images.unsplash.com/photo-1563829026777-a8dfc8441113?w=400&h=300&fit=crop' // New placeholder image (luggage)
+  },
+  {
+    icon: 'fa-wheelchair',
+    title: 'Wheelchair Accessibility',
+    desc: '**Wheelchairs** are available free of charge for guests requiring mobility assistance.',
+    features: ['Free', 'General Services'],
+    image: 'https://images.unsplash.com/photo-1563829026777-a8dfc8441113?w=400&h=300&fit=crop' // Re-used accessibility image
+  },
+  // Health and Wellness (Gym already included)
+  {
+    icon: 'fa-medkit',
+    title: 'First-aid Services',
+    desc: 'Trained staff are available to provide immediate **First-aid Services** when needed.',
+    features: ['Health and Wellness'],
+    image: 'https://images.unsplash.com/photo-1579752174620-3b47c6158145?w=400&h=300&fit=crop' // New placeholder image (first aid)
+  },
+  // Room Amenities
+  {
+    icon: 'fa-briefcase',
+    title: 'Work Desk',
+    desc: 'A comfortable **Work Desk** is provided in every room for your productivity.',
+    features: ['Room Amenities'],
+    image: 'https://images.unsplash.com/photo-1596529329712-42111d431f1f?w=400&h=300&fit=crop' // New placeholder image (work desk)
+  },
+  {
+    icon: 'fa-bottle-water',
+    title: 'Mineral Water (Chargeable)',
+    desc: '**Mineral Water** bottles are available for your convenience, with an additional charge.',
+    features: ['Additional Charge', 'Room Amenities'],
+    image: 'https://images.unsplash.com/photo-1596529329712-42111d431f1f?w=400&h=300&fit=crop' // Re-used water image
+  },
+  // Safety and Security
+  {
+    icon: 'fa-video',
+    title: 'CCTV Surveillance',
+    desc: 'The premises are secured 24/7 with comprehensive **CCTV** surveillance for your safety.',
+    features: ['Safety and Security'],
+    image: 'https://images.unsplash.com/photo-1549402517-5e9c0c1b7e41?w=400&h=300&fit=crop' // New placeholder image (CCTV)
+  },
+  {
+    icon: 'fa-fire-extinguisher',
+    title: 'Fire Extinguishers',
+    desc: 'Easily accessible **Fire Extinguishers** are located throughout the property as part of our fire safety plan.',
+    features: ['Safety and Security'],
+    image: 'https://images.unsplash.com/photo-1549402517-5e9c0c1b7e41?w=400&h=300&fit=crop' // Re-used fire safety image
+  },
+];
 
 // Main Amenities component
 const Amenities: React.FC = () => {
@@ -32,47 +150,36 @@ const Amenities: React.FC = () => {
     setIsVisible(true);
   }, []);
 
-  const amenities = [
-
-
-    {
-      title: '24-Hour Fitness Center',
-      image: 'https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg',
-      description:
-        'Stay fit any time of the day in our fully equipped gym featuring the latest cardio and strength training equipment. Enjoy personal training sessions or relax in the stretching zone after your workout.',
-      features: [
-        { icon: ClockIcon, text: 'Open 24 Hours' },
-        { icon: WaterDropIcon, text: 'Modern fitness machines' },
-        { icon: CocktailIcon, text: 'Personal training available' },
-      ],
-    },
-    {
-      title: 'Fine Dining Restaurant',
-      image: 'https://images.surferseo.art/7d5164fa-7a4d-49bd-a811-307c98f79698.png',
-      description:
-        'Savor exquisite international cuisine crafted by our master chefs. Dine in a refined atmosphere with panoramic views, or enjoy private dining for a more intimate experience.',
-      features: [
-        { icon: ClockIcon, text: 'Breakfast, Lunch & Dinner' },
-        { icon: WaterDropIcon, text: 'Panoramic city views' },
-        { icon: CocktailIcon, text: 'Signature cocktails & wines' },
-      ],
-    },
-  ];
-  const services = [
-    { icon: Wifi, title: 'Free Wi-Fi', description: 'High-speed internet throughout the property' },
-    { icon: Car, title: 'Valet Parking', description: 'Complimentary valet service for all guests' },
-    { icon: Plane, title: 'Airport Shuttle', description: 'Scheduled transfers to major airports' },
-    { icon: Headphones, title: 'Concierge', description: '24/7 assistance for reservations and tours' },
-    { icon: Bell, title: 'Room Service', description: 'Gourmet dining delivered to your room' },
-    { icon: Shield, title: 'Safe Deposit', description: 'Secure storage for your valuables' },
-    { icon: MessageSquare, title: 'Multilingual Staff', description: 'Service in English, Spanish, French, and more' },
-    { icon: Heart, title: 'Pet Friendly', description: 'Welcome amenities for your furry friends' }
-  ];
-
+const amenities = [
+ 
+  
+  {
+    title: '24-Hour Fitness Center',
+    image: 'https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg',
+    description:
+      'Stay fit any time of the day in our fully equipped gym featuring the latest cardio and strength training equipment. Enjoy personal training sessions or relax in the stretching zone after your workout.',
+    features: [
+      { icon: ClockIcon, text: 'Open 24 Hours' },
+      { icon: WaterDropIcon, text: 'Modern fitness machines' },
+      { icon: CocktailIcon, text: 'Personal training available' },
+    ],
+  },
+  {
+    title: 'Fine Dining Restaurant',
+    image: 'https://images.surferseo.art/7d5164fa-7a4d-49bd-a811-307c98f79698.png',
+    description:
+      'Savor exquisite international cuisine crafted by our master chefs. Dine in a refined atmosphere with panoramic views, or enjoy private dining for a more intimate experience.',
+    features: [
+      { icon: ClockIcon, text: 'Breakfast, Lunch & Dinner' },
+      { icon: WaterDropIcon, text: 'Panoramic city views' },
+      { icon: CocktailIcon, text: 'Signature cocktails & wines' },
+    ],
+  },
+];
   return (
     <div className="min-h-screen bg-gray-50">
 
-      <style> {`
+            <style>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -228,28 +335,49 @@ const Amenities: React.FC = () => {
               Comprehensive amenities designed to make your stay comfortable and memorable
             </p>
           </div>
+<section className="py-20 px-4 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Amenities</span>
+          <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">World-Class Facilities</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Discover our exceptional amenities designed to enhance your stay
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {services.map((service, idx) => {
-              const IconComponent = service.icon;
-              return (
-                <div
-                  key={idx}
-                  className={`bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center group ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
-                  style={{ animationDelay: `${0.7 + idx * 0.05}s` }}
-                >
-                  <div className="relative inline-block mb-5">
-                    <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                    <div className="relative w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-110">
-                      <IconComponent className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
-                  <h3 className="font-bold text-gray-900 mb-3 text-lg">{service.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {updatedAmenities.map((amenity, idx) => (
+            <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 duration-300">
+              <div className="relative h-48 overflow-hidden group">
+                {/* Image */}
+                <img 
+                  src={amenity.image} 
+                  alt={amenity.title} 
+                  className="w-full h-full object-cover transition-transform group-hover:scale-110" 
+                />
+                {/* Icon Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 transition-opacity">
+                  <i className={`fas ${amenity.icon} text-5xl text-white`}></i>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+              <div className="p-6">
+                <h4 className="text-xl font-bold text-gray-900 mb-3">{amenity.title}</h4>
+                <p className="text-gray-600 mb-4">{amenity.desc}</p>
+                <div className="flex flex-wrap gap-3">
+                  {amenity.features.map((feature, i) => (
+                    <span key={i} className="flex items-center gap-1 text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
+                      <i className="fas fa-check-circle text-green-500"></i>
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
         </div>
 
         {/* CTA Section */}
