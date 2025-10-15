@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import homeVideo from "../assets/home.mp4"; // relative path from this file
 import { useNavigate } from "react-router-dom";
 
@@ -347,147 +347,6 @@ const Homepage: React.FC = () => {
         </div>
       </section>
 
-      {/* Amenities */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Amenities</span>
-            <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">World-Class Facilities</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Discover our exceptional amenities designed to enhance your stay
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: 'fa-wifi',
-                title: 'High-Speed Internet',
-                desc: 'Complimentary wireless internet access throughout the hotel premises with enterprise-grade security.',
-                features: ['24/7 Available', 'High Speed'],
-                image: 'https://images.unsplash.com/photo-1551721434-8b94ddff0e6d?w=400&h=300&fit=crop'
-              },
-              {
-                icon: 'fa-swimming-pool',
-                title: 'Rooftop Pool',
-                desc: 'Luxurious rooftop swimming pool with breathtaking city skyline views and premium lounging areas.',
-                features: ['Heated Pool', 'City Views'],
-                image: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=400&h=300&fit=crop'
-              },
-              {
-                icon: 'fa-car',
-                title: 'Valet Parking',
-                desc: 'Premium valet parking service with secure underground facility and professional attendants.',
-                features: ['Secure', 'Valet Service'],
-                image: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=400&h=300&fit=crop'
-              },
-              {
-                icon: 'fa-dumbbell',
-                title: 'Modern Fitness Center',
-                desc: 'Cutting-edge fitness facility featuring premium equipment and personal training services.',
-                features: ['24/7 Access', 'Personal Training'],
-                image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop'
-              },
-              {
-                icon: 'fa-utensils',
-                title: 'Signature Restaurant',
-                desc: 'Award-winning culinary experience featuring international cuisine crafted by renowned chefs.',
-                features: ['Fine Dining', 'Wine Selection'],
-                image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop'
-              },
-              {
-                icon: 'fa-spa',
-                title: 'Luxury Spa',
-                desc: 'Tranquil sanctuary offering therapeutic treatments and holistic wellness experiences.',
-                features: ['Full Service', 'Wellness Programs'],
-                image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=300&fit=crop'
-              }
-            ].map((amenity, idx) => (
-              <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2">
-                <div className="relative h-48 overflow-hidden group">
-                  <img src={amenity.image} alt={amenity.title} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <i className={`fas ${amenity.icon} text-5xl text-white`}></i>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">{amenity.title}</h4>
-                  <p className="text-gray-600 mb-4">{amenity.desc}</p>
-                  <div className="flex gap-3">
-                    {amenity.features.map((feature, i) => (
-                      <span key={i} className="flex items-center gap-1 text-sm text-gray-600">
-                        <i className="fas fa-check-circle text-green-500"></i>
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      {/* <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
-            <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">What Our Guests Say</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Read reviews from our satisfied guests who experienced exceptional hospitality
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                name: 'Robert Johnson',
-                role: 'Chief Executive Officer',
-                review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
-                image: 'https://randomuser.me/api/portraits/men/32.jpg'
-              },
-              {
-                name: 'Sarah Williams',
-                role: 'Marketing Director',
-                review: 'Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id.',
-                image: 'https://randomuser.me/api/portraits/women/65.jpg'
-              },
-              {
-                name: 'Michael Davis',
-                role: 'Product Manager',
-                review: 'Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram.',
-                image: 'https://randomuser.me/api/portraits/men/54.jpg'
-              },
-              {
-                name: 'Emily Thompson',
-                role: 'Design Lead',
-                review: 'Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam.',
-                image: 'https://randomuser.me/api/portraits/women/44.jpg'
-              }
-            ].map((testimonial, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow">
-                <div className="mb-6">
-                  <i className="fas fa-quote-left text-4xl text-blue-200"></i>
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">{testimonial.review}</p>
-                <div className="flex items-center gap-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
 
       {/* Offers Section */}
       <section className="py-20 px-4 bg-white overflow-hidden">
@@ -818,49 +677,35 @@ const Homepage: React.FC = () => {
         </div>
       </section>
 
-      {/* Gallery */}
-      {/* <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-            {[
-              'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=400&fit=crop',
-              'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=400&fit=crop',
-              'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop',
-              'https://images.unsplash.com/photo-1519167758481-83f29da8fd49?w=400&h=400&fit=crop',
-              'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=400&h=400&fit=crop',
-              'https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=400&h=400&fit=crop',
-              'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=400&fit=crop',
-              'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400&h=400&fit=crop'
-            ].map((img, idx) => (
-              <div key={idx} className="relative group overflow-hidden rounded-lg aspect-square">
-                <img src={img} alt={`Gallery ${idx + 1}`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                    <i className="fas fa-eye text-gray-900"></i>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
 
-          <div className="text-center">
-            <button className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg">
-              <i className="fas fa-images"></i>
-              Discover Our Full Gallery
-            </button>
-          </div>
-        </div>
-      </section> */}
 
-      {/* Scroll to Top Button */}
-      {scrolled && (
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all hover:scale-110 z-50 flex items-center justify-center"
-        >
-          <i className="fas fa-arrow-up"></i>
-        </button>
-      )}
+{/* Scroll to Top Button */}
+{scrolled && (
+  <button
+    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    className="fixed bottom-8 right-8 w-16 h-16 z-50 flex items-center justify-center hover:scale-110 transition-transform"
+  >
+    <svg
+      height="64px"
+      width="64px"
+      viewBox="0 0 58 58"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+    >
+      <g>
+        <path
+          style={{ fill: '#2CB742' }}
+          d="M0,58l4.988-14.963C2.457,38.78,1,33.812,1,28.5C1,12.76,13.76,0,29.5,0S58,12.76,58,28.5 S45.24,57,29.5,57c-4.789,0-9.299-1.187-13.26-3.273L0,58z"
+        ></path>
+        <path
+          style={{ fill: '#FFFFFF' }}
+          d="M47.683,37.985c-1.316-2.487-6.169-5.331-6.169-5.331c-1.098-0.626-2.423-0.696-3.049,0.42 c0,0-1.577,1.891-1.978,2.163c-1.832,1.241-3.529,1.193-5.242-0.52l-3.981-3.981l-3.981-3.981c-1.713-1.713-1.761-3.41-0.52-5.242 c0.272-0.401,2.163-1.978,2.163-1.978c1.116-0.627,1.046-1.951,0.42-3.049c0,0-2.844-4.853-5.331-6.169 c-1.058-0.56-2.357-0.364-3.203,0.482l-1.758,1.758c-5.577,5.577-2.831,11.873,2.746,17.45l5.097,5.097l5.097,5.097 c5.577,5.577,11.873,8.323,17.45,2.746l1.758-1.758C48.048,40.341,48.243,39.042,47.683,37.985z"
+        ></path>
+      </g>
+    </svg>
+  </button>
+)}
+
 
       <style>{`
         @keyframes fadeIn {
@@ -882,6 +727,7 @@ const Homepage: React.FC = () => {
         }
       `}</style>
     </div>
+    
   );
 };
 
