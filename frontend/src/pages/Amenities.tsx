@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Wifi, Car, Plane, Headphones, Bell, Shield, MessageSquare, Heart } from 'lucide-react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 // Custom SVG Icons
 const ClockIcon = () => (
@@ -25,39 +25,39 @@ const CocktailIcon = () => (
 
 // Main Amenities component
 const Amenities: React.FC = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-const amenities = [
- 
-  
-  {
-    title: '24-Hour Fitness Center',
-    image: 'https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg',
-    description:
-      'Stay fit any time of the day in our fully equipped gym featuring the latest cardio and strength training equipment. Enjoy personal training sessions or relax in the stretching zone after your workout.',
-    features: [
-      { icon: ClockIcon, text: 'Open 24 Hours' },
-      { icon: WaterDropIcon, text: 'Modern fitness machines' },
-      { icon: CocktailIcon, text: 'Personal training available' },
-    ],
-  },
-  {
-    title: 'Fine Dining Restaurant',
-    image: 'https://images.surferseo.art/7d5164fa-7a4d-49bd-a811-307c98f79698.png',
-    description:
-      'Savor exquisite international cuisine crafted by our master chefs. Dine in a refined atmosphere with panoramic views, or enjoy private dining for a more intimate experience.',
-    features: [
-      { icon: ClockIcon, text: 'Breakfast, Lunch & Dinner' },
-      { icon: WaterDropIcon, text: 'Panoramic city views' },
-      { icon: CocktailIcon, text: 'Signature cocktails & wines' },
-    ],
-  },
-];
+  const amenities = [
+
+
+    {
+      title: '24-Hour Fitness Center',
+      image: 'https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg',
+      description:
+        'Stay fit any time of the day in our fully equipped gym featuring the latest cardio and strength training equipment. Enjoy personal training sessions or relax in the stretching zone after your workout.',
+      features: [
+        { icon: ClockIcon, text: 'Open 24 Hours' },
+        { icon: WaterDropIcon, text: 'Modern fitness machines' },
+        { icon: CocktailIcon, text: 'Personal training available' },
+      ],
+    },
+    {
+      title: 'Fine Dining Restaurant',
+      image: 'https://images.surferseo.art/7d5164fa-7a4d-49bd-a811-307c98f79698.png',
+      description:
+        'Savor exquisite international cuisine crafted by our master chefs. Dine in a refined atmosphere with panoramic views, or enjoy private dining for a more intimate experience.',
+      features: [
+        { icon: ClockIcon, text: 'Breakfast, Lunch & Dinner' },
+        { icon: WaterDropIcon, text: 'Panoramic city views' },
+        { icon: CocktailIcon, text: 'Signature cocktails & wines' },
+      ],
+    },
+  ];
   const services = [
     { icon: Wifi, title: 'Free Wi-Fi', description: 'High-speed internet throughout the property' },
     { icon: Car, title: 'Valet Parking', description: 'Complimentary valet service for all guests' },
@@ -72,7 +72,7 @@ const amenities = [
   return (
     <div className="min-h-screen bg-gray-50">
 
-            <style> {`
+      <style> {`
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -133,34 +133,34 @@ const amenities = [
       `}</style>
 
       {/* Hero Section with Background Image */}
-      <section 
-        className="relative h-[70vh] flex items-center justify-center overflow-hidden"
-        style={{ 
+      <section
+        className="relative h-[80vh] flex items-end justify-center overflow-hidden pb-16 sm:pb-20"
+        style={{
           backgroundImage: 'url(https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/202510031336347435-1116607044-1114ce27-2ee3-49d2-b5f2-36ea4ac0ca2f.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
-        
-        <div className={`relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 text-white ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/60"></div>
+
+        <div className={`relative z-10 text-center max-w-3xl mx-auto px-4 sm:px-6 text-white ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight tracking-tight">
             Experience Unparalleled Luxury
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl mb-8 leading-relaxed opacity-90">
-            Discover our world-class amenities designed to provide ultimate comfort and indulgence during your stay
+          <p className="text-base sm:text-lg lg:text-xl mb-6 leading-relaxed opacity-90">
+            Discover our world-class amenities designed to provide ultimate comfort and indulgence during your stay.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => navigate('/booking')} // ✅ Navigate to booking.tsx
-              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <button
+              onClick={() => navigate('/booking')}
+              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-3 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
             >
               Book Your Stay
             </button>
 
-            <button 
-              onClick={() => navigate('/rooms')} // ✅ Navigate to rooms.tsx
-              className="bg-white/10 backdrop-blur-md border-2 border-white hover:bg-white/20 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+            <button
+              onClick={() => navigate('/rooms')}
+              className="bg-white/10 backdrop-blur-md border-2 border-white hover:bg-white/20 text-white px-8 py-3 rounded-full font-semibold text-base sm:text-lg transition-all duration-300"
             >
               View All Rooms
             </button>
@@ -168,8 +168,9 @@ const amenities = [
         </div>
       </section>
 
+
       {/* Amenities Grid */}
-      <main className="container mx-auto px-4 sm:px-6 py-16 lg:py-24">
+      <main className="container mx-auto px-4 sm:px-6 py-3 lg:py-8">
         {/* Amenities Section */}
         <div className="mb-20">
           <div className={`text-center mb-12 ${isVisible ? 'animate-fade-in-up delay-200' : 'opacity-0'}`}>
@@ -189,10 +190,10 @@ const amenities = [
                 style={{ animationDelay: `${0.3 + idx * 0.15}s` }}
               >
                 <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={amenity.image} 
-                    alt={amenity.title} 
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
+                  <img
+                    src={amenity.image}
+                    alt={amenity.title}
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
@@ -232,7 +233,7 @@ const amenities = [
             {services.map((service, idx) => {
               const IconComponent = service.icon;
               return (
-                <div 
+                <div
                   key={idx}
                   className={`bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center group ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}
                   style={{ animationDelay: `${0.7 + idx * 0.05}s` }}
@@ -254,11 +255,11 @@ const amenities = [
         {/* CTA Section */}
         <div className={`${isVisible ? 'animate-fade-in-up delay-800' : 'opacity-0'}`}>
           <div className="bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 rounded-3xl p-10 sm:p-16 shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 bg-animate opacity-20" style={{ 
+            <div className="absolute inset-0 bg-animate opacity-20" style={{
               backgroundImage: 'linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent)',
               backgroundSize: '40px 40px'
             }}></div>
-            
+
             <div className="relative z-10 text-center">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Ready to Experience Luxury?
@@ -267,18 +268,18 @@ const amenities = [
                 Book your stay today and discover why our guests return time and time again to experience our world-class amenities
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                   <button 
-              onClick={() => navigate('/booking')} // ✅ Navigate to booking.tsx
-              className="bg-white hover:bg-gray-50 text-amber-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-            >
-              Reserve Your Stay
-            </button>
-            <button 
-              onClick={() => navigate('/contact')} // ✅ Navigate to contact.tsx
-              className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300"
-            >
-              Contact Concierge
-            </button>
+                <button
+                  onClick={() => navigate('/booking')} // ✅ Navigate to booking.tsx
+                  className="bg-white hover:bg-gray-50 text-amber-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                >
+                  Reserve Your Stay
+                </button>
+                <button
+                  onClick={() => navigate('/contact')} // ✅ Navigate to contact.tsx
+                  className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+                >
+                  Contact Concierge
+                </button>
               </div>
             </div>
           </div>
