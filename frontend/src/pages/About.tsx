@@ -72,9 +72,9 @@ const HotelLandingPage: React.FC = () => {
         setFavorites(prev =>
             prev.includes(id) ? prev.filter(f => f !== id) : [...prev, id]
         );
-        
+
     };
-    
+
     return (
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
@@ -170,13 +170,16 @@ const HotelLandingPage: React.FC = () => {
 
             {/* Hospitality Section */}
             <section className="bg-gray-50 py-10 sm:py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-8 sm:mb-12">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">Exceptional Hospitality Redefined</h2>
-                        <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+                    <div className="text-center mb-8 sm:mb-12 lg:py-0 -mt-15">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 lg:py-0">
+                            Exceptional Hospitality Redefined
+                        </h2>
+                        <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto ">
                             Discover a world of luxury and comfort with our premium services and amenities
                         </p>
                     </div>
+
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                         <div className="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
@@ -319,10 +322,10 @@ const HotelLandingPage: React.FC = () => {
                                     {selectedRoom === 0
                                         ? 'Presidential Suite'
                                         : selectedRoom === 1
-                                        ? 'Deluxe King Room'
-                                        : selectedRoom === 2
-                                        ? 'Ocean View Suite'
-                                        : 'Cityscape Studio'}
+                                            ? 'Deluxe King Room'
+                                            : selectedRoom === 2
+                                                ? 'Ocean View Suite'
+                                                : 'Cityscape Studio'}
                                 </h3>
                                 <div className="flex items-center gap-3 text-white text-xs sm:text-sm">
                                     <span className="flex items-center gap-1">
@@ -348,9 +351,8 @@ const HotelLandingPage: React.FC = () => {
                             <div
                                 key={i}
                                 onClick={() => setSelectedRoom(i)}
-                                className={`cursor-pointer rounded-2xl overflow-hidden shadow-md border-2 transition-all ${
-                                    selectedRoom === i ? 'border-blue-600 scale-[1.02]' : 'border-transparent hover:scale-[1.02]'
-                                }`}
+                                className={`cursor-pointer rounded-2xl overflow-hidden shadow-md border-2 transition-all ${selectedRoom === i ? 'border-blue-600 scale-[1.02]' : 'border-transparent hover:scale-[1.02]'
+                                    }`}
                             >
                                 <img
                                     src={img}
@@ -389,7 +391,7 @@ const HotelLandingPage: React.FC = () => {
                         ))}
                     </div>
                     <div className="text-center mt-6 sm:mt-8">
-                        <button 
+                        <button
                             onClick={() => setShowAllRooms(!showAllRooms)}
                             className="border-2 border-gray-300 hover:bg-gray-50 text-gray-700 px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-colors"
                         >
