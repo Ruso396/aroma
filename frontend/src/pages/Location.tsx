@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Clock, Car, Train, Plane, Users, Star, Navigation } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 // Custom SVG Icons
 const CheckCircleIcon = () => (
@@ -15,6 +16,7 @@ const WalkIcon = () => (
 );
 
 export default function Location() {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -23,46 +25,46 @@ export default function Location() {
 
   const attractions = [
     {
-      name: "Millennium Park",
-      distance: "2 blocks",
-      time: "5 minute walk",
-      image: "https://images.unsplash.com/photo-1564769625905-50e93615e769?w=400&h=300&fit=crop",
-      description: "Iconic urban park featuring contemporary art installations, stunning architecture, and beautiful gardens perfect for a leisurely afternoon."
+      name: "Seekuparai Viewpoint",
+      distance: "2 km",
+      time: "10 minute drive",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      description: "Top attraction of Kolli Hills offering captivating panoramic views of dense forests and lush valleys. Also known as 'Suicide Point' due to its dramatic cliffs."
     },
     {
-      name: "Art Institute",
-      distance: "6 blocks",
-      time: "12 minute walk",
-      image: "https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?w=400&h=300&fit=crop",
-      description: "World-renowned art museum showcasing masterpieces from around the globe, featuring impressive collections of impressionist and modern art."
+      name: "Agaya Gangai Waterfalls",
+      distance: "8 km",
+      time: "25 minute drive",
+      image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=400&h=300&fit=crop",
+      description: "Spectacular 300-feet cascading waterfall meaning 'Ganges from the Sky'. Requires a trek of 1000 steps down through scenic valley views. A sacred and breathtaking sight."
     },
     {
-      name: "Navy Pier",
-      distance: "1.2 miles",
-      time: "18 minute walk",
-      image: "https://images.unsplash.com/photo-1580837119756-563d608dd119?w=400&h=300&fit=crop",
-      description: "Vibrant waterfront destination with entertainment, dining, and breathtaking lake views. Perfect for families and couples alike."
+      name: "Arapaleeswarar Temple",
+      distance: "7 km",
+      time: "20 minute drive",
+      image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop",
+      description: "Ancient hilltop temple dedicated to Lord Shiva. Rich in heritage and spiritual significance, attracting pilgrims and tourists seeking tranquility amidst scenic beauty."
     },
     {
-      name: "Theater District",
-      distance: "3 blocks",
-      time: "10 minute walk",
-      image: "https://images.unsplash.com/photo-1503095396549-807759245b35?w=400&h=300&fit=crop",
-      description: "Experience world-class Broadway shows and theatrical performances in historic venues. Entertainment excellence awaits nightly."
+      name: "Botanical Garden",
+      distance: "3 km",
+      time: "8 minute drive",
+      image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=300&fit=crop",
+      description: "Beautiful garden featuring rose gardens, eco-friendly cottages, majestic viewpoints and children's park. Perfect spot for nature lovers and family outings."
     },
     {
-      name: "Magnificent Mile",
-      distance: "1 block",
-      time: "2 minute walk",
-      image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&h=300&fit=crop",
-      description: "Premier shopping destination featuring luxury brands, upscale boutiques, and world-class dining experiences along Michigan Avenue."
+      name: "Masila Waterfalls",
+      distance: "12 km",
+      time: "35 minute drive",
+      image: "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=400&h=300&fit=crop",
+      description: "Serene waterfall nestled in dense forest surroundings. A perfect trekking destination offering refreshing natural beauty and peaceful atmosphere."
     },
     {
-      name: "Lake Michigan Shore",
-      distance: "0.8 miles",
-      time: "15 minute walk",
-      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop",
-      description: "Stunning lakefront with beach access, scenic trails, and waterfront dining. Perfect for morning jogs or sunset strolls."
+      name: "Namma Falls",
+      distance: "5 km",
+      time: "15 minute drive",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop",
+      description: "Lesser-known gem of Kolli Hills with pristine waters surrounded by lush greenery. Ideal for those seeking offbeat natural attractions and photography."
     }
   ];
 
@@ -70,33 +72,32 @@ export default function Location() {
     {
       icon: Car,
       title: "By Car",
-      subtitle: "Most Convenient",
-      description: "Complimentary valet service available. Premium parking garage with direct hotel access and EV charging stations.",
-      tags: ["Valet Service", "EV Charging"]
+      subtitle: "70 Hairpin Bends Adventure",
+      description: "Navigate through the famous 70 hairpin curves to reach Semmadu. Well-maintained scenic mountain roads with breathtaking valley views. Ample parking available at the resort.",
+      tags: ["Scenic Route", "Free Parking"]
     },
     {
       icon: Train,
-      title: "By Metro",
-      subtitle: "3 min walk",
-      description: "State Street Station directly connects to all major lines. Blue line to airports, Red line to suburbs and entertainment districts.",
-      tags: ["Blue Line", "Red Line"]
+      title: "By Train",
+      subtitle: "Salem Junction - 88 km",
+      description: "Salem Junction is the nearest railway station, well-connected to all major cities including Chennai, Bangalore, and Coimbatore. Hire a taxi or take a bus from Salem to reach Kolli Hills.",
+      tags: ["Major Connectivity", "Taxi Available"]
     },
     {
       icon: Plane,
-      title: "Airport Shuttle",
-      subtitle: "Every 30 min",
-      description: "Luxury shuttle service to both major airports. Premium comfort with WiFi, refreshments, and luggage assistance included.",
-      tags: ["WiFi", "Refreshments"]
+      title: "By Flight",
+      subtitle: "Trichy Airport - 90 km",
+      description: "Tiruchirappalli International Airport is the nearest airport. Direct flights from Chennai, Bangalore, and Madurai. Hire a taxi for a scenic 2-3 hour journey to the hills.",
+      tags: ["International Airport", "Taxi Service"]
     },
     {
       icon: Users,
-      title: "Ride Share",
-      subtitle: "24/7 Available",
-      description: "Dedicated pickup zone for all ride-sharing services. Professional concierge staff for booking and special requests.",
-      tags: ["Concierge Help", "Express Pickup"]
+      title: "By Bus",
+      subtitle: "Direct from Namakkal",
+      description: "Regular state-run buses operate from Namakkal and Salem to Semmadu. TNSTC buses provide comfortable and affordable transportation through the hill route.",
+      tags: ["Daily Service", "Affordable"]
     }
   ];
-
   return (
     <div className="min-h-screen bg-white mt-10">
       <style>{`
@@ -190,66 +191,114 @@ export default function Location() {
 
       {/* Location Details */}
       <div className="container mx-auto px-4 sm:px-6 pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-2">
           {/* Contact Info */}
           <div className={`${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
             <div className="rounded-3xl p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-8">Contact & Details</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">
+                Contact & Details
+              </h2>
+
               <div className="space-y-6">
+                {/* 📍 Address */}
                 <div className="flex items-start gap-4 group">
                   <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-2 text-lg">Address</div>
-                    <div className="text-gray-600 leading-relaxed">456 Madison Street<br />Chicago, IL 60601</div>
+                    <div className="font-semibold text-gray-900 mb-2 text-lg">
+                      Address
+                    </div>
+                    <div className="text-gray-600 leading-relaxed">
+                      <span className="font-medium text-emerald-700">
+                        Aroma Resort
+                      </span>
+                      <br />
+                      Kolli Hills, Semmadu, View Point Road
+                      <br />
+                      Namakkal District, Tamil Nadu – 637411
+                    </div>
                   </div>
                 </div>
 
+                {/* ☎️ Contact */}
                 <div className="flex items-start gap-4 group">
                   <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-2 text-lg">Contact</div>
-                    <div className="text-gray-600 leading-relaxed">+1 (202) 555-0432<br />info@grandoria.com</div>
+                    <div className="font-semibold text-gray-900 mb-2 text-lg">
+                      Contact
+                    </div>
+                    <div className="text-gray-600 leading-relaxed">
+                      +91 98765 43210 <br />
+                      <a
+                        href="mailto:info@aromaresort.com"
+                        className="text-emerald-600 hover:underline"
+                      >
+                        info@aromaresort.com
+                      </a>
+                    </div>
                   </div>
                 </div>
 
+                {/* ✈️ Nearby Access */}
                 <div className="flex items-start gap-4 group">
                   <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
                     <Plane className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-2 text-lg">Airport Access</div>
-                    <div className="text-gray-600 leading-relaxed">O'Hare International - 30 min<br />Midway Airport - 25 min</div>
+                    <div className="font-semibold text-gray-900 mb-2 text-lg">
+                      Nearby Access
+                    </div>
+                    <div className="text-gray-600 leading-relaxed">
+                      Salem Airport – 90 min drive <br />
+                      Namakkal Bus Stand – 60 min drive
+                    </div>
                   </div>
                 </div>
 
+                {/* ⏰ Check-in Times */}
                 <div className="flex items-start gap-4 group">
                   <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-2 text-lg">Check-in Times</div>
-                    <div className="text-gray-600 leading-relaxed">Check-in: After 3:00 PM<br />Check-out: Before 11:00 AM</div>
+                    <div className="font-semibold text-gray-900 mb-2 text-lg">
+                      Check-in Times
+                    </div>
+                    <div className="text-gray-600 leading-relaxed">
+                      Check-in: After 2:00 PM <br />
+                      Check-out: Before 11:00 AM
+                    </div>
                   </div>
                 </div>
               </div>
 
+              {/* 🗺️ Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-gray-100">
-                <button className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <a
+                  href="https://maps.google.com/?q=Aroma+Resort,+Kolli+Hills,+Semmadu,+View+Point+Road"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
+                >
                   View on Map
-                </button>
-                <button className="border-2 border-emerald-600 hover:bg-emerald-50 text-emerald-700 px-8 py-4 rounded-full font-semibold transition-all duration-300">
+                </a>
+
+                <button
+                  onClick={() => navigate('/room-details')}
+                  className="border-2 border-emerald-600 hover:bg-emerald-50 text-emerald-700 px-8 py-4 rounded-full font-semibold transition-all duration-300"
+                >
                   Book Now
                 </button>
               </div>
             </div>
           </div>
 
+
           {/* Map */}
-          <div className="w-full h-[500px]">
+          <div className="w-full h-[700px] py-3 lg:py-11">
             <iframe
               title="Namakkal Location Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62585.89876543211!2d78.1344!3d11.2189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bab617c4e46e7f9%3A0x4f1b9b9b9b9b9b9b!2sNamakkal%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1696931503000!5m2!1sen!2sin"
@@ -264,9 +313,9 @@ export default function Location() {
         </div>
 
         {/* Getting Here Section */}
-        <div className="mb-20">
+        <div className="mb-10">
           <div className={`text-center mb-12 ${isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent lg:py-3">
               Getting Here is Easy
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -318,7 +367,7 @@ export default function Location() {
         {/* Explore Neighborhood */}
         <div className={`${isVisible ? 'animate-fade-in-up delay-600' : 'opacity-0'}`}>
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent lg:py-3">
               Explore the Neighborhood
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
