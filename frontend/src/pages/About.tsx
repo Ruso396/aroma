@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+
 // SVG Icons
 const CheckIcon = () => (
     <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,10 +43,10 @@ const HeartIcon = ({ filled }: { filled: boolean }) => (
     </svg>
 );
 
-
 const HotelLandingPage: React.FC = () => {
     const [selectedRoom, setSelectedRoom] = useState(0);
     const [favorites, setFavorites] = useState<number[]>([]);
+    const [showAllRooms, setShowAllRooms] = useState(false);
 
     const roomImages = [
         'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop',
@@ -55,19 +55,30 @@ const HotelLandingPage: React.FC = () => {
         'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop'
     ];
 
+    const allRooms = [
+        { name: 'Standard Room', price: 159, img: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop' },
+        { name: 'Superior Room', price: 199, img: 'https://images.unsplash.com/photo-1591088398332-8a7791972843?w=400&h=300&fit=crop' },
+        { name: 'Family Suite', price: 349, img: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=400&h=300&fit=crop' },
+        { name: 'Presidential Suite', price: 599, img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop' },
+        { name: 'Luxury Suite', price: 449, img: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop' },
+        { name: 'Business Suite', price: 299, img: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400&h=300&fit=crop' },
+        { name: 'Honeymoon Suite', price: 499, img: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=300&fit=crop' },
+        { name: 'Garden View Room', price: 249, img: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=400&h=300&fit=crop' },
+    ];
+
+    const displayedRooms = showAllRooms ? allRooms : allRooms.slice(0, 4);
+
     const toggleFavorite = (id: number) => {
         setFavorites(prev =>
             prev.includes(id) ? prev.filter(f => f !== id) : [...prev, id]
         );
+        
     };
-    const navigate = useNavigate();
-    return (
-        <div className="min-h-screen bg-white mt-20">
     
+    return (
+        <div className="min-h-screen bg-white">
             {/* Hero Section */}
-
-            {/* Hero Section */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 mt-20 sm:mt-24">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     {/* Image Collage */}
                     <div className="relative w-full">
@@ -146,16 +157,10 @@ const HotelLandingPage: React.FC = () => {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                            <button
-                                onClick={() => navigate("/rooms")}
-                                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-800 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium transition-colors"
-                            >
+                            <button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-800 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium transition-colors">
                                 Explore Rooms
                             </button>
-                            <button
-                                onClick={() => navigate("/contact")}
-                                className="w-full sm:w-auto border-2 border-gray-300 hover:bg-gray-50 text-gray-700 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium transition-colors"
-                            >
+                            <button className="w-full sm:w-auto border-2 border-gray-300 hover:bg-gray-50 text-gray-700 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium transition-colors">
                                 Contact Us
                             </button>
                         </div>
@@ -174,7 +179,7 @@ const HotelLandingPage: React.FC = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                        <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+                        <div className="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                             <div className="w-full h-44 sm:h-56 overflow-hidden">
                                 <img
                                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop"
@@ -202,7 +207,7 @@ const HotelLandingPage: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+                        <div className="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                             <div className="w-full h-44 sm:h-56 overflow-hidden">
                                 <img
                                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop"
@@ -230,7 +235,7 @@ const HotelLandingPage: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+                        <div className="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                             <div className="w-full h-44 sm:h-56 overflow-hidden">
                                 <img
                                     src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&h=400&fit=crop"
@@ -260,6 +265,7 @@ const HotelLandingPage: React.FC = () => {
                     </div>
                 </div>
             </section>
+
             {/* Statistics Section */}
             <section className="py-10 sm:py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -361,13 +367,8 @@ const HotelLandingPage: React.FC = () => {
             <section className="py-10 sm:py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-                        {[
-                            { name: 'Standard Room', price: 159, img: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop' },
-                            { name: 'Superior Room', price: 199, img: 'https://images.unsplash.com/photo-1591088398332-8a7791972843?w=400&h=300&fit=crop' },
-                            { name: 'Family Suite', price: 349, img: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=400&h=300&fit=crop' },
-                            { name: 'Presidential Suite', price: 599, img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop' },
-                        ].map((room, idx) => (
-                            <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                        {displayedRooms.map((room, idx) => (
+                            <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                                 <img
                                     src={room.img}
                                     alt={room.name}
@@ -388,14 +389,15 @@ const HotelLandingPage: React.FC = () => {
                         ))}
                     </div>
                     <div className="text-center mt-6 sm:mt-8">
-                        <button className="border-2 border-gray-300 hover:bg-gray-50 text-gray-700 px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-colors">
-                            Explore More Rooms →
+                        <button 
+                            onClick={() => setShowAllRooms(!showAllRooms)}
+                            className="border-2 border-gray-300 hover:bg-gray-50 text-gray-700 px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-colors"
+                        >
+                            {showAllRooms ? 'Show Less Rooms ↑' : 'Explore More Rooms →'}
                         </button>
                     </div>
                 </div>
             </section>
-
-           
         </div>
     );
 };
