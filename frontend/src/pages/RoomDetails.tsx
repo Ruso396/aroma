@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { Star, Users, Maximize, Wifi, Coffee, Phone, Bath } from 'lucide-react';
+import mainImage from "../assets/room.jpg"
+import gallery1 from "../assets/gallery1.webp"
+import gallery2 from "../assets/gallery2.webp"
+import gallery3 from "../assets/gallery3.webp"
+import gallery4 from "../assets/gallery4.webp"
 
 export default function RoomDetails() {
-  const [mainImage, setMainImage] = useState('/api/placeholder/600/400');
 
-  const galleryImages = [
-    '/api/placeholder/280/200',
-    '/api/placeholder/280/200',
-    '/api/placeholder/280/200',
-    '/api/placeholder/280/200',
-  ];
-
+const galleryImages = [gallery1, gallery2, gallery3, gallery4];
   return (
     <div className="min-h-screen bg-white mt-28">
       
@@ -90,7 +88,6 @@ export default function RoomDetails() {
                 src={img}
                 alt={`Gallery ${idx + 1}`}
                 className="w-full h-48 object-cover rounded-lg shadow cursor-pointer hover:opacity-90 transition"
-                onClick={() => setMainImage(img)}
               />
             ))}
           </div>

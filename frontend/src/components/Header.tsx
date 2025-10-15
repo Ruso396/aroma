@@ -9,7 +9,6 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Paths where the header should be initially transparent
   const transparentHeaderPaths = ['/', '/amenities'];
   const isTransparentPage = transparentHeaderPaths.includes(location.pathname);
 
@@ -29,11 +28,30 @@ const Header: React.FC = () => {
     { label: 'Contact', path: '/contact' },
   ];
 
-  // Determine colors based on transparency and scroll state
-  const headerBg = isTransparentPage && !isScrolled ? 'bg-transparent' : 'bg-white shadow-lg';
-  const topBarBg = isTransparentPage && !isScrolled ? 'bg-black/30 text-white' : 'bg-white text-gray-800';
-  const navTextColor = isTransparentPage && !isScrolled ? 'text-white' : 'text-gray-800';
-  const navHoverColor = isTransparentPage && !isScrolled ? 'hover:text-amber-300' : 'hover:text-amber-600';
+  // Header background logic
+  const headerBg = isMobileMenuOpen
+    ? 'bg-white shadow-lg'
+    : isTransparentPage && !isScrolled
+    ? 'bg-transparent'
+    : 'bg-white shadow-lg';
+
+  const topBarBg = isMobileMenuOpen
+    ? 'bg-white text-gray-800'
+    : isTransparentPage && !isScrolled
+    ? 'bg-black/30 text-white'
+    : 'bg-white text-gray-800';
+
+  const navTextColor = isMobileMenuOpen
+    ? 'text-gray-800'
+    : isTransparentPage && !isScrolled
+    ? 'text-white'
+    : 'text-gray-800';
+
+  const navHoverColor = isMobileMenuOpen
+    ? 'hover:text-amber-600'
+    : isTransparentPage && !isScrolled
+    ? 'hover:text-amber-300'
+    : 'hover:text-amber-600';
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all ${headerBg}`}>
@@ -63,10 +81,7 @@ const Header: React.FC = () => {
       <div className="transition-colors">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            <Link
-              to="/"
-              className={`text-2xl font-bold transition-colors ${navTextColor}`}
-            >
+            <Link to="/" className={`text-2xl font-bold transition-colors ${navTextColor}`}>
               Aroma
             </Link>
 
@@ -100,6 +115,7 @@ const Header: React.FC = () => {
                   key={link.label}
                   to={link.path}
                   className={`block py-2 font-medium transition ${navTextColor} ${navHoverColor}`}
+                  onClick={() => setIsMobileMenuOpen(false)} // Close menu on click
                 >
                   {link.label}
                 </Link>
