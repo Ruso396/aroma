@@ -59,9 +59,9 @@ const Header: React.FC = () => {
       <div className={`py-2 transition-colors ${topBarBg}`}>
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
-            <a href="mailto:contact@example.com" className="flex items-center gap-2 hover:text-amber-500 transition">
+            <a href="mailto:aroma@mail.com" className="flex items-center gap-2 hover:text-amber-500 transition">
               <Mail size={16} />
-              <span className="hidden md:inline">contact@example.com</span>
+              <span className="hidden md:inline">aroma@mail</span>
             </a>
             <a href="tel:+15589554885" className="flex items-center gap-2 hover:text-amber-500 transition">
               <Phone size={16} />
