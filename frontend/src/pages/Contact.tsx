@@ -21,19 +21,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Breadcrumb Section */}
-      <div className="bg-white border-b mt-32" >
-        <div className="max-w-7xl mx-auto px-4  flex items-center justify-between">
-          <h1 className="text-3xl font-bold text-gray-800">Contact</h1>
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <a href="/" className="hover:text-teal-700">Home</a>
-            <span>/</span>
-            <span className="text-gray-800">Contact</span>
-          </div>
-        </div>
-      </div>
-
+    <div className="min-h-screen bg-gray-50 mt-25">
 
       {/* Map Section */}
       <div className="w-full h-[500px]">
