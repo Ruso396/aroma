@@ -202,7 +202,7 @@ const HotelLandingPage: React.FC = () => {
                                         <UsersIcon />
                                         2-4 Guests
                                     </span>
-                                    <span>From $299/night</span>
+                                    <span>From 299/night</span>
                                 </div>
                             </div>
                         </div>
@@ -382,7 +382,7 @@ const HotelLandingPage: React.FC = () => {
                                                 <StarIcon key={i} filled={i < 4} />
                                             ))}
                                         </div>
-                                        <span className="text-sm sm:text-base md:text-lg font-bold text-teal-700">${room.price}</span>
+                                        <span className="text-sm sm:text-base md:text-lg font-bold text-teal-700">₹{room.price}</span>
                                     </div>
                                 </div>
                             </div>
