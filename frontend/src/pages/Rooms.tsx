@@ -302,8 +302,8 @@ const RoomListing: React.FC = () => {
             <div
               key={room.id}
               className={`relative bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all duration-500 ${activeCard === room.id && clickedCard !== room.id
-                  ? 'transform scale-105 shadow-2xl z-10'
-                  : ''
+                ? 'transform scale-105 shadow-2xl z-10'
+                : ''
                 } ${clickedCard === room.id
                   ? 'transform scale-95 opacity-70'
                   : ''
@@ -322,26 +322,15 @@ const RoomListing: React.FC = () => {
 
               <div className="relative bg-white rounded-xl overflow-hidden">
                 {/* Image */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-56 overflow-hidden group">
                   <img
                     src={room.image}
                     alt={room.title}
                     className={`w-full h-full object-cover transition-transform duration-700 ${activeCard === room.id ? 'scale-110' : 'scale-100'
                       }`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute top-3 left-3 flex flex-col gap-2">
-                    {room.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className={`${getTagColors(tag)} text-white text-xs px-3 py-1 rounded-full font-medium shadow-lg backdrop-blur-sm transform transition-transform duration-300 ${activeCard === room.id ? 'translate-x-1' : ''
-                          }`}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
+
 
                 {/* Content */}
                 <div className="p-6">
