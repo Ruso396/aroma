@@ -14,7 +14,7 @@ export default function RoomDetails() {
 const galleryImages = [gallery1, gallery2, gallery3, gallery4];
   return (
     <div className="min-h-screen bg-white mt-28">
-      
+
 
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Main Room Section */}

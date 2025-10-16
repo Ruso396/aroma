@@ -40,11 +40,11 @@ interface Room {
 }
 
 const RoomListing: React.FC = () => {
+  const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [clickedCard, setClickedCard] = useState<number | null>(null);
   const [visibleRooms, setVisibleRooms] = useState(6);
   const [isLoading, setIsLoading] = useState(false);
- const navigate = useNavigate();
   // ✅ Local images used instead of URLs
   const rooms: Room[] = [
     { id: 1, title: 'Deluxe Ocean Suite', tags: ['Ocean View', 'Popular'], image: DeluxeOceanSuite, rating: 5, description: 'Experience breathtaking ocean views from your suite.', capacity: 'Up to 4 guests', amenities: [{ icon: <Wifi className="w-3 h-3" />, text: 'Free WiFi' }, { icon: <Tv className="w-3 h-3" />, text: 'Smart TV' }], price: 289, priceLabel: '/ night' },
