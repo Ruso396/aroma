@@ -117,13 +117,12 @@ const RoomListing: React.FC = () => {
               onMouseLeave={() => setActiveCard(null)}
               onClick={() => handleCardClick(room.id)}
             >
-              <div className="relative h-44 sm:h-56 overflow-hidden">
+              <div className="relative h-56 overflow-hidden group">
                 <img
                   src={room.image}
                   alt={room.title}
-                  className={`w-full h-full object-cover transition-transform duration-700 ₹{
-                    activeCard === room.id ? 'scale-110' : 'scale-100'
-                  }`}
+                  className={`w-full h-full object-cover transition-transform duration-700 ${activeCard === room.id ? 'scale-110' : 'scale-100'
+                    }`}
                 />
                 <div className="absolute bottom-3 left-3 flex flex-wrap gap-1">
                   {room.tags.map((tag, idx) => (
@@ -161,12 +160,12 @@ const RoomListing: React.FC = () => {
                     <span className="text-xl sm:text-2xl font-bold text-blue-600">₹{room.price}</span>
                     <span className="text-xs text-gray-500">{room.priceLabel}</span>
                   </div>
-                 <button
-      onClick={() => navigate("/room-details")}
-      className="bg-blue-600 text-white px-4 py-1.5 sm:px-5 sm:py-2 rounded-md text-xs sm:text-sm font-medium hover:bg-blue-700 transition"
-    >
-      View Details
-    </button>
+                  <button
+                    onClick={() => navigate("/room-details")}
+                    className="bg-blue-600 text-white px-4 py-1.5 sm:px-5 sm:py-2 rounded-md text-xs sm:text-sm font-medium hover:bg-blue-700 transition"
+                  >
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>

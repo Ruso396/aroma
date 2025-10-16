@@ -10,6 +10,11 @@ import explore from "../assets/explore.jpg"
 import locationImage from "../assets/kolliLogo.png";
 import grand from '../assets/Premium Ocean View.webp';
 import Garden from '../assets/Garden Villa Suite.webp';
+import delex from '../assets/Deluxe Ocean Suite.webp';
+import advancebook from '../assets/Executive Business Suite.webp';
+import stay from '../assets/Romantic Honeymoon Suite.webp';
+
+
 
 import { useNavigate } from "react-router-dom";
 import { Bus, Map, Mountain, Route } from "lucide-react";
@@ -550,7 +555,7 @@ const Homepage: React.FC = () => {
                 originalPrice: 299,
                 offerPrice: 224,
                 validity: "Valid until Dec 31, 2024",
-                image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop",
+                image: delex
               },
               {
                 badge: "BEST VALUE",
@@ -559,7 +564,7 @@ const Homepage: React.FC = () => {
                 originalPrice: 189,
                 offerPrice: 149,
                 validity: "Book by Jan 15, 2025",
-                image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
+                image: stay
               },
               {
                 badge: "EARLY BIRD",
@@ -568,7 +573,7 @@ const Homepage: React.FC = () => {
                 originalPrice: 249,
                 offerPrice: 199,
                 validity: "Available year-round",
-                image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop",
+                image: advancebook
               },
             ].map((offer, idx) => (
               <div
