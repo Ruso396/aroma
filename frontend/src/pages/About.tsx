@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
-
+import React, { useState, } from 'react';
+import { useNavigate } from "react-router-dom";
+  
 // SVG Icons
 const CheckIcon = () => (
-    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-    </svg>
+    <svg
+    className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M5 13l4 4L19 7"
+    />
+  </svg>
 );
 
 const StarIcon = ({ filled }: { filled: boolean }) => (
@@ -74,7 +85,7 @@ const HotelLandingPage: React.FC = () => {
         );
 
     };
-
+const navigate = useNavigate();
     return (
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
@@ -114,7 +125,7 @@ const HotelLandingPage: React.FC = () => {
 
                     {/* Content */}
                     <div>
-                        <div className="inline-block bg-teal-50 text-teal-800 px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-3">
+                        <div className="inline-block bg-blue-50 text-blue-800 px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-3">
                             5 Star Hotel
                         </div>
                         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
@@ -157,12 +168,19 @@ const HotelLandingPage: React.FC = () => {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                            <button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-800 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium transition-colors">
-                                Explore Rooms
-                            </button>
-                            <button className="w-full sm:w-auto border-2 border-gray-300 hover:bg-gray-50 text-gray-700 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium transition-colors">
-                                Contact Us
-                            </button>
+                         <button
+        onClick={() => navigate("/rooms")}
+        className="w-full sm:w-auto bg-blue-600 hover:bg-blue-800 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium transition-colors"
+      >
+        Explore Rooms
+      </button>
+
+      <button
+        onClick={() => navigate("/contact")}
+        className="w-full sm:w-auto border-2 border-gray-300 hover:bg-gray-50 text-gray-700 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium transition-colors"
+      >
+        Contact Us
+      </button>
                         </div>
                     </div>
                 </div>
@@ -384,7 +402,7 @@ const HotelLandingPage: React.FC = () => {
                                                 <StarIcon key={i} filled={i < 4} />
                                             ))}
                                         </div>
-                                        <span className="text-sm sm:text-base md:text-lg font-bold text-teal-700">₹{room.price}</span>
+                                        <span className="text-sm sm:text-base md:text-lg font-bold text-blue-700">₹{room.price}</span>
                                     </div>
                                 </div>
                             </div>

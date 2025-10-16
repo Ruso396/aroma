@@ -42,7 +42,7 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {/* Location Card */}
           <div className="bg-gray-100 rounded-lg p-6 flex items-start gap-4">
-            <div className="bg-teal-700 p-3 rounded-lg">
+            <div className="bg-blue-700 p-3 rounded-lg">
               <MapPin className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -53,7 +53,7 @@ export default function ContactPage() {
 
           {/* Phone & Email Card */}
           <div className="bg-gray-100 rounded-lg p-6 flex items-start gap-4">
-            <div className="bg-teal-700 p-3 rounded-lg">
+            <div className="bg-blue-700 p-3 rounded-lg">
               <Phone className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
             <div className="text-center">
               <button
                 onClick={handleSubmit}
-                className="bg-teal-700 text-white px-8 py-3 rounded-md font-medium hover:bg-teal-800 transition-colors uppercase text-sm cursor-pointer"
+                className="bg-blue-700 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-800 transition-colors uppercase text-sm cursor-pointer"
               >
                 Send Message
               </button>
