@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Users, Wifi, Tv, Phone, Bed, Utensils, Car, Coffee, Waves } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface Room {
   id: number;
@@ -15,6 +16,7 @@ interface Room {
 }
 
 const RoomListing: React.FC = () => {
+  const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [clickedCard, setClickedCard] = useState<number | null>(null);
   const [visibleRooms, setVisibleRooms] = useState(6);
@@ -299,15 +301,13 @@ const RoomListing: React.FC = () => {
           {displayedRooms.map((room) => (
             <div
               key={room.id}
-              className={`relative bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all duration-500 ${
-                activeCard === room.id && clickedCard !== room.id
+              className={`relative bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all duration-500 ${activeCard === room.id && clickedCard !== room.id
                   ? 'transform scale-105 shadow-2xl z-10'
                   : ''
-              } ${
-                clickedCard === room.id
+                } ${clickedCard === room.id
                   ? 'transform scale-95 opacity-70'
                   : ''
-              }`}
+                }`}
               onMouseEnter={() => setActiveCard(room.id)}
               onMouseLeave={() => setActiveCard(null)}
               onClick={() => handleCardClick(room.id)}
@@ -326,18 +326,16 @@ const RoomListing: React.FC = () => {
                   <img
                     src={room.image}
                     alt={room.title}
-                    className={`w-full h-full object-cover transition-transform duration-700 ${
-                      activeCard === room.id ? 'scale-110' : 'scale-100'
-                    }`}
+                    className={`w-full h-full object-cover transition-transform duration-700 ${activeCard === room.id ? 'scale-110' : 'scale-100'
+                      }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-3 left-3 flex flex-col gap-2">
                     {room.tags.map((tag, idx) => (
                       <span
                         key={idx}
-                        className={`${getTagColors(tag)} text-white text-xs px-3 py-1 rounded-full font-medium shadow-lg backdrop-blur-sm transform transition-transform duration-300 ${
-                          activeCard === room.id ? 'translate-x-1' : ''
-                        }`}
+                        className={`${getTagColors(tag)} text-white text-xs px-3 py-1 rounded-full font-medium shadow-lg backdrop-blur-sm transform transition-transform duration-300 ${activeCard === room.id ? 'translate-x-1' : ''
+                          }`}
                       >
                         {tag}
                       </span>
@@ -382,9 +380,9 @@ const RoomListing: React.FC = () => {
                       </span>
                     </div>
                     <button
-                      className={`bg-gradient-to-r from-teal-700 to-teal-900 hover:from-teal-800 hover:to-teal-950 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-md hover:shadow-xl ${
-                        activeCard === room.id ? 'scale-105' : ''
-                      }`}
+                      onClick={() => navigate(`/room-details`)}
+                      className={`bg-gradient-to-r from-teal-700 to-teal-900 hover:from-teal-800 hover:to-teal-950 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-md hover:shadow-xl ${activeCard === room.id ? 'scale-105' : ''
+                        }`}
                     >
                       View Details
                     </button>
@@ -398,7 +396,7 @@ const RoomListing: React.FC = () => {
         {/* Load More Button */}
         <div className="flex justify-center">
           {hasMore ? (
-            <button 
+            <button
               onClick={handleLoadMore}
               disabled={isLoading}
               className="group flex items-center gap-3 px-8 py-4 bg-white border-2 border-teal-600 rounded-full text-teal-700 font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -432,7 +430,7 @@ const RoomListing: React.FC = () => {
             </button>
           ) : (
             <div className="text-gray-500 text-center py-4">
-       
+
             </div>
           )}
         </div>

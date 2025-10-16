@@ -5,13 +5,14 @@ import gallery1 from "../assets/gallery1.webp"
 import gallery2 from "../assets/gallery2.webp"
 import gallery3 from "../assets/gallery3.webp"
 import gallery4 from "../assets/gallery4.webp"
+import { useNavigate } from 'react-router-dom';
 
 export default function RoomDetails() {
-
-const galleryImages = [gallery1, gallery2, gallery3, gallery4];
+  const navigate = useNavigate();
+  const galleryImages = [gallery1, gallery2, gallery3, gallery4];
   return (
     <div className="min-h-screen bg-white mt-28">
-      
+
 
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Main Room Section */}
@@ -68,11 +69,13 @@ const galleryImages = [gallery1, gallery2, gallery3, gallery4];
             </div>
 
             <div className="flex items-end gap-3 mb-6">
-              <span className="text-4xl font-bold text-gray-800">$395</span>
+              <span className="text-4xl font-bold text-gray-800">₹395</span>
               <span className="text-gray-600 mb-1">per night</span>
             </div>
 
-            <button className="w-full md:w-auto bg-teal-700 hover:bg-teal-800 text-white px-8 py-3 rounded font-medium">
+            <button
+              onClick={() => navigate("/booking")}
+              className="w-full md:w-auto bg-teal-700 hover:bg-teal-800 text-white px-8 py-3 rounded font-medium">
               Book Now
             </button>
           </div>
@@ -252,7 +255,7 @@ const galleryImages = [gallery1, gallery2, gallery3, gallery4];
               <p className="text-sm text-gray-600 mb-4">
                 Start your day with a delicious breakfast buffet featuring local and international cuisine
               </p>
-              <p className="text-teal-700 font-bold">+$30 per person</p>
+              <p className="text-teal-700 font-bold">+₹30 per person</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg border text-center">
@@ -263,7 +266,7 @@ const galleryImages = [gallery1, gallery2, gallery3, gallery4];
               <p className="text-sm text-gray-600 mb-4">
                 Enjoy unlimited access to our state-of-the-art spa facilities during your stay
               </p>
-              <p className="text-teal-700 font-bold">+$75 per day</p>
+              <p className="text-teal-700 font-bold">+₹75 per day</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg border text-center">
@@ -274,7 +277,7 @@ const galleryImages = [gallery1, gallery2, gallery3, gallery4];
               <p className="text-sm text-gray-600 mb-4">
                 Private luxury vehicle airport transfers for a smooth and comfortable journey
               </p>
-              <p className="text-teal-700 font-bold">+$90 round trip</p>
+              <p className="text-teal-700 font-bold">+₹90 round trip</p>
             </div>
           </div>
         </section>
@@ -288,7 +291,7 @@ const galleryImages = [gallery1, gallery2, gallery3, gallery4];
             </p>
           </div>
           <div className="text-right">
-            <div className="text-4xl font-bold mb-2">$395</div>
+            <div className="text-4xl font-bold mb-2">₹395</div>
             <div className="text-teal-200 text-sm mb-4">PER NIGHT</div>
             <button className="bg-white text-teal-900 px-6 py-3 rounded font-medium hover:bg-gray-100">
               Check Availability
