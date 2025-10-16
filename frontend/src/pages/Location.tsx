@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Clock, Car, Train, Plane, Users, Star, Navigation } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import viewpoint from "../assets/viewpoint.jpg";
+import falls from "../assets/falls.webp";
+import temple from "../assets/temple.webp";
+import garden from "../assets/garden.webp";
+import masila from "../assets/masila-falls.jpg";
+import boat from "../assets/kolli hills.jpg";
+
+
 
 // Custom SVG Icons
 const CheckCircleIcon = () => (
@@ -28,42 +36,42 @@ export default function Location() {
       name: "Seekuparai Viewpoint",
       distance: "2 km",
       time: "10 minute drive",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      image: viewpoint,
       description: "Top attraction of Kolli Hills offering captivating panoramic views of dense forests and lush valleys. Also known as 'Suicide Point' due to its dramatic cliffs."
     },
     {
       name: "Agaya Gangai Waterfalls",
       distance: "8 km",
       time: "25 minute drive",
-      image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=400&h=300&fit=crop",
+      image: falls,
       description: "Spectacular 300-feet cascading waterfall meaning 'Ganges from the Sky'. Requires a trek of 1000 steps down through scenic valley views. A sacred and breathtaking sight."
     },
     {
       name: "Arapaleeswarar Temple",
       distance: "7 km",
       time: "20 minute drive",
-      image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop",
+      image: temple,
       description: "Ancient hilltop temple dedicated to Lord Shiva. Rich in heritage and spiritual significance, attracting pilgrims and tourists seeking tranquility amidst scenic beauty."
     },
     {
       name: "Botanical Garden",
       distance: "3 km",
       time: "8 minute drive",
-      image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=300&fit=crop",
+      image: garden,
       description: "Beautiful garden featuring rose gardens, eco-friendly cottages, majestic viewpoints and children's park. Perfect spot for nature lovers and family outings."
     },
     {
       name: "Masila Waterfalls",
       distance: "12 km",
       time: "35 minute drive",
-      image: "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=400&h=300&fit=crop",
+      image: masila,
       description: "Serene waterfall nestled in dense forest surroundings. A perfect trekking destination offering refreshing natural beauty and peaceful atmosphere."
     },
     {
-      name: "Namma Falls",
+      name: "Boat Ride",
       distance: "5 km",
       time: "15 minute drive",
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop",
+      image: boat,
       description: "Lesser-known gem of Kolli Hills with pristine waters surrounded by lush greenery. Ideal for those seeking offbeat natural attractions and photography."
     }
   ];
