@@ -172,10 +172,10 @@ export default function Location() {
 
       {/* Hero Section */}
       <section className="relative py-16 md:py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/5 via-teal-600/5 to-cyan-600/5 bg-animate"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-blue-600/5 to-cyan-600/5 bg-animate"></div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className={`max-w-4xl ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <div className="flex items-center gap-2 text-emerald-700 mb-4">
+            <div className="flex items-center gap-2 text-blue-700 mb-4">
               <MapPin className="w-5 h-5" />
               <span className="font-semibold text-sm tracking-wide uppercase">Prime Location</span>
             </div>
@@ -202,7 +202,7 @@ export default function Location() {
               <div className="space-y-6">
                 {/* 📍 Address */}
                 <div className="flex items-start gap-4 group">
-                  <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <div className="bg-blue-600 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -210,7 +210,7 @@ export default function Location() {
                       Address
                     </div>
                     <div className="text-gray-600 leading-relaxed">
-                      <span className="font-medium text-emerald-700">
+                      <span className="font-medium text-blue-700">
                         Aroma Resort
                       </span>
                       <br />
@@ -223,7 +223,7 @@ export default function Location() {
 
                 {/* ☎️ Contact */}
                 <div className="flex items-start gap-4 group">
-                  <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <div className="bg-blue-600 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -234,7 +234,7 @@ export default function Location() {
                       +91 98765 43210 <br />
                       <a
                         href="mailto:info@aromaresort.com"
-                        className="text-emerald-600 hover:underline"
+                        className="text-blue-600 hover:underline"
                       >
                         info@aromaresort.com
                       </a>
@@ -244,7 +244,7 @@ export default function Location() {
 
                 {/* ✈️ Nearby Access */}
                 <div className="flex items-start gap-4 group">
-                  <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <div className="bg-blue-600 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
                     <Plane className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -260,7 +260,7 @@ export default function Location() {
 
                 {/* ⏰ Check-in Times */}
                 <div className="flex items-start gap-4 group">
-                  <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <div className="bg-blue-600 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -281,14 +281,14 @@ export default function Location() {
                   href="https://maps.google.com/?q=Aroma+Resort,+Kolli+Hills,+Semmadu,+View+Point+Road"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
+                  className="bg-blue-600 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
                 >
                   View on Map
                 </a>
 
                 <button
                   onClick={() => navigate('/room-details')}
-                  className="border-2 border-emerald-600 hover:bg-emerald-50 text-emerald-700 px-8 py-4 rounded-full font-semibold transition-all duration-300"
+                  className="border-2 border-blue-600 hover:bg-blue-50 text-blue-700 px-8 py-4 rounded-full font-semibold transition-all duration-300"
                 >
                   Book Now
                 </button>
@@ -334,14 +334,14 @@ export default function Location() {
                 >
                   <div className="flex items-start gap-4 mb-6">
                     <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                      <div className="relative bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl p-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                      <div className="relative bg-blue-600 rounded-2xl p-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
                         <IconComponent className="w-8 h-8 text-white" />
                       </div>
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 mb-1">{option.title}</h3>
-                      <p className="text-sm text-emerald-600 font-semibold">{option.subtitle}</p>
+                      <p className="text-sm text-blue-600 font-semibold">{option.subtitle}</p>
                     </div>
                   </div>
                   <p className="text-gray-600 leading-relaxed mb-6">
@@ -351,7 +351,7 @@ export default function Location() {
                     {option.tags.map((tag, tagIdx) => (
                       <span
                         key={tagIdx}
-                        className="inline-flex items-center gap-1 text-xs bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full font-medium border border-emerald-100"
+                        className="inline-flex items-center gap-1 text-xs bg-blue-50 text-blue-700 px-4 py-2 rounded-full font-medium border border-blue-100"
                       >
                         <CheckCircleIcon />
                         {tag}
@@ -391,14 +391,14 @@ export default function Location() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute top-4 left-4">
                     <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg">
-                      <MapPin className="w-4 h-4 text-emerald-600" />
+                      <MapPin className="w-4 h-4 text-blue-600" />
                       <span className="text-gray-900">{attraction.distance}</span>
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{attraction.name}</h3>
-                  <div className="flex items-center gap-2 text-emerald-600 mb-4 font-medium">
+                  <div className="flex items-center gap-2 text-blue-600 mb-4 font-medium">
                     <WalkIcon />
                     <span className="text-sm">{attraction.time}</span>
                   </div>
@@ -411,17 +411,17 @@ export default function Location() {
 
         {/* CTA Section */}
         <div className={`mt-20 ${isVisible ? 'animate-fade-in-up delay-800' : 'opacity-0'}`}>
-          <div className="bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-700 rounded-3xl p-10 sm:p-16 shadow-2xl relative overflow-hidden">
+          <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-700 rounded-3xl p-10 sm:p-16 shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 bg-animate opacity-20" style={{ backgroundImage: 'linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent)' }}></div>
             <div className="relative z-10 text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                 Ready to Experience Our Prime Location?
               </h2>
-              <p className="text-emerald-50 text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-blue-50 text-lg mb-8 max-w-2xl mx-auto">
                 Book your stay today and discover why location matters when it comes to luxury
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white hover:bg-gray-50 text-emerald-700 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                <button className="bg-white hover:bg-gray-50 text-blue-700 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
                   Reserve Your Stay
                 </button>
                 <button className="border-2 border-white hover:bg-white/10 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300">

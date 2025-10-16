@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Wifi, Clock, Car, Dumbbell, Shield, RefreshCw, Phone } from 'lucide-react';
-
+import booking from "../assets/booking.webp"
 export default function HotelBooking() {
   const [formData, setFormData] = useState({
     arrivalDate: '',
@@ -205,7 +205,7 @@ export default function HotelBooking() {
             {/* Hotel Image */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-6">
               <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=400&fit=crop"
+                src={booking}
                 alt="Hotel"
                 className="w-full h-64 object-cover"
               />

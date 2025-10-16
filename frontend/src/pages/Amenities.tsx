@@ -1,6 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Wifi, Car, Plane, Headphones, Bell, Shield, MessageSquare, Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import hours from "../assets/24-Hour Fitness Center.jpeg";
+import dining from "../assets/Fine Dining Restaurant.jpeg";
+import news from "../assets/Complimentary Newspaper.jpg";
+import room from "../assets/Limited Room Service.jpeg";
+import parking from "../assets/parking.jpeg";
+import smoke from "../assets/smoking room.jpeg";
+import laundary from "../assets/laundary.jpeg";
+import wifi from "../assets/wifi.jpeg";
+import reception from "../assets/Limited Duration Reception.jpeg";
+import luggage from "../assets/Luggage Assistance.jpeg";
+import wheelchair from "../assets/Wheelchair Accessibility.jpeg";
+import firstaid from "../assets/First-aid Services.jpeg";
+import workdesk from "../assets/Work Desk.jpeg";
+import water from "../assets/mineralwater_660_121317124915.webp";
+import cctv from "../assets/CCTV Surveillance.jpeg";
+import fire from "../assets/Fire Extinguishers.jpeg";
+
+
+
+
+
+
 
 // Custom SVG Icons
 const ClockIcon = () => (
@@ -25,16 +47,16 @@ const updatedAmenities = [
   {
     icon: 'fa-dumbbell',
     title: '24-Hour Fitness Center',
-    desc: 'Access our state-of-the-art **Gym** facility anytime, day or night.',
+    desc: 'Access our state-of-the-art  Gym  facility anytime, day or night.',
     features: ['24-hour', 'Health and Wellness'],
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop' // Existing Gym image
+    image: hours // Existing Gym image
   },
   {
     icon: 'fa-utensils',
     title: 'Signature Restaurant',
-    desc: 'Enjoy fine dining at our **Restaurant** with award-winning culinary experiences.',
+    desc: 'Enjoy fine dining at our  Restaurant  with award-winning culinary experiences.',
     features: ['Fine Dining', 'Food and Drinks'],
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop' // Existing Restaurant image
+    image: dining // Existing Restaurant image
   },
   // Basic Facilities
   {
@@ -42,102 +64,102 @@ const updatedAmenities = [
     title: 'Smoking Rooms',
     desc: 'Designated rooms available for guests who require smoking facilities.',
     features: ['Basic Facilities'],
-    image: 'https://images.unsplash.com/photo-1607525389650-7058204b4c71?w=400&h=300&fit=crop' // New placeholder image (generic interior)
+    image: smoke // New placeholder image (generic interior)
   },
   {
     icon: 'fa-concierge-bell',
     title: 'Limited Room Service',
-    desc: 'Convenient **Room Service** available during specific hours.',
+    desc: 'Convenient  Room Service  available during specific hours.',
     features: ['Limited duration', 'Basic Facilities'],
-    image: 'https://images.unsplash.com/photo-1583275330396-e3d6f14088a8?w=400&h=300&fit=crop' // New placeholder image (food service)
+    image: room // New placeholder image (food service)
   },
   {
     icon: 'fa-newspaper',
     title: 'Complimentary Newspaper',
-    desc: 'Stay informed with a complimentary **Newspaper** available in the local language.',
+    desc: 'Stay informed with a complimentary  Newspaper  available in the local language.',
     features: ['Local Language', 'Basic Facilities'],
-    image: 'https://images.unsplash.com/photo-1585822956691-236f011500d0?w=400&h=300&fit=crop' // New placeholder image (newspaper)
+    image: news
   },
   {
     icon: 'fa-parking',
     title: 'Free Onsite Parking',
-    desc: 'Complimentary and secure **Free Parking** facility located onsite.',
+    desc: 'Complimentary and secure  Free Parking  facility located onsite.',
     features: ['Free - Onsite', 'Basic Facilities'],
-    image: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=400&h=300&fit=crop' // Existing Parking image
+    image: parking // Existing Parking image
   },
   {
     icon: 'fa-tshirt',
     title: 'Laundry Service',
-    desc: 'Professional **Laundry Service** is available, with a limit of free pieces.',
+    desc: 'Professional  Laundry Service  is available, with a limit of free pieces.',
     features: ['Paid', 'Limited Pieces Free'],
-    image: 'https://images.unsplash.com/photo-1582226279930-bc66e5108269?w=400&h=300&fit=crop' // New placeholder image (laundry)
+    image: laundary // New placeholder image (laundry)
   },
   {
     icon: 'fa-wifi',
     title: 'Free High-Speed Wi-Fi',
-    desc: 'Complimentary **Free Wi-Fi** with a speed suitable for working and streaming.',
+    desc: 'Complimentary  Free Wi-Fi  with a speed suitable for working and streaming.',
     features: ['Free', 'Suitable for working'],
-    image: 'https://images.unsplash.com/photo-1551721434-8b94ddff0e6d?w=400&h=300&fit=crop' // Existing Wi-Fi image
+    image: wifi // Existing Wi-Fi image
   },
   {
     icon: 'fa-clock',
     title: 'Limited Duration Reception',
-    desc: 'Our **Reception** desk is available to assist you during scheduled operating hours.',
+    desc: 'Our  Reception  desk is available to assist you during scheduled operating hours.',
     features: ['Limited Duration', 'Basic Facilities'],
-    image: 'https://images.unsplash.com/photo-1517840921200-984e49df0a54?w=400&h=300&fit=crop' // New placeholder image (reception)
+    image: reception // New placeholder image (reception)
   },
   // General Services
   {
     icon: 'fa-suitcase',
     title: 'Luggage Assistance',
-    desc: 'Professional service for managing and transferring your **Luggage** upon arrival and departure.',
+    desc: 'Professional service for managing and transferring your  Luggage  upon arrival and departure.',
     features: ['General Services'],
-    image: 'https://images.unsplash.com/photo-1563829026777-a8dfc8441113?w=400&h=300&fit=crop' // New placeholder image (luggage)
+    image: luggage // New placeholder image (luggage)
   },
   {
     icon: 'fa-wheelchair',
     title: 'Wheelchair Accessibility',
-    desc: '**Wheelchairs** are available free of charge for guests requiring mobility assistance.',
+    desc: ' Wheelchairs  are available free of charge for guests requiring mobility assistance.',
     features: ['Free', 'General Services'],
-    image: 'https://images.unsplash.com/photo-1563829026777-a8dfc8441113?w=400&h=300&fit=crop' // Re-used accessibility image
+    image: wheelchair // Re-used accessibility image
   },
   // Health and Wellness (Gym already included)
   {
     icon: 'fa-medkit',
     title: 'First-aid Services',
-    desc: 'Trained staff are available to provide immediate **First-aid Services** when needed.',
+    desc: 'Trained staff are available to provide immediate  First-aid Services  when needed.',
     features: ['Health and Wellness'],
-    image: 'https://images.unsplash.com/photo-1579752174620-3b47c6158145?w=400&h=300&fit=crop' // New placeholder image (first aid)
+    image: firstaid // New placeholder image (first aid)
   },
   // Room Amenities
   {
     icon: 'fa-briefcase',
     title: 'Work Desk',
-    desc: 'A comfortable **Work Desk** is provided in every room for your productivity.',
+    desc: 'A comfortable  Work Desk  is provided in every room for your productivity.',
     features: ['Room Amenities'],
-    image: 'https://images.unsplash.com/photo-1596529329712-42111d431f1f?w=400&h=300&fit=crop' // New placeholder image (work desk)
+    image: workdesk // New placeholder image (work desk)
   },
   {
     icon: 'fa-bottle-water',
     title: 'Mineral Water (Chargeable)',
-    desc: '**Mineral Water** bottles are available for your convenience, with an additional charge.',
+    desc: ' Mineral Water  bottles are available for your convenience, with an additional charge.',
     features: ['Additional Charge', 'Room Amenities'],
-    image: 'https://images.unsplash.com/photo-1596529329712-42111d431f1f?w=400&h=300&fit=crop' // Re-used water image
+    image: water // Re-used water image
   },
   // Safety and Security
   {
     icon: 'fa-video',
     title: 'CCTV Surveillance',
-    desc: 'The premises are secured 24/7 with comprehensive **CCTV** surveillance for your safety.',
+    desc: 'The premises are secured 24/7 with comprehensive  CCTV  surveillance for your safety.',
     features: ['Safety and Security'],
-    image: 'https://images.unsplash.com/photo-1549402517-5e9c0c1b7e41?w=400&h=300&fit=crop' // New placeholder image (CCTV)
+    image: cctv // New placeholder image (CCTV)
   },
   {
     icon: 'fa-fire-extinguisher',
     title: 'Fire Extinguishers',
-    desc: 'Easily accessible **Fire Extinguishers** are located throughout the property as part of our fire safety plan.',
+    desc: 'Easily accessible  Fire Extinguishers  are located throughout the property as part of our fire safety plan.',
     features: ['Safety and Security'],
-    image: 'https://images.unsplash.com/photo-1549402517-5e9c0c1b7e41?w=400&h=300&fit=crop' // Re-used fire safety image
+    image: fire // Re-used fire safety image
   },
 ];
 
