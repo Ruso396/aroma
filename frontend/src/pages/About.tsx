@@ -1,5 +1,25 @@
 import React, { useState, } from 'react';
 import { useNavigate } from "react-router-dom";
+import about1 from "../assets/about1.jpg";
+import about2 from "../assets/about2.jpg";
+import about3 from "../assets/about3.jpg";
+import Elegant from "../assets/Elegant Interiors.jpg";
+import gournet from "../assets/Gourmet Dining.jpg";
+import scenic from "../assets/Scenic Location.jpg";
+import room1 from "../assets/Presidential Suite1.jpg";
+import room2 from "../assets/Presidential Suite2.jpg";
+import room3 from "../assets/Presidential Suite3.jpg";
+import room4 from "../assets/Presidential Suite4.jpg";
+import StandardRoom from '../assets/Standard Room.jpg';
+import SuperiorRoom from '../assets/Superior Room.jpg';
+import FamilySuite from '../assets/Family Suite.jpg';
+import PresidentialSuite from '../assets/Presidential Suite.jpg';
+import LuxurySuite from '../assets/Luxury Suite.jpg';
+import BusinessSuite from '../assets/Business Suite.jpg';
+import HoneymoonSuite from '../assets/Honeymoon Suite.jpg';
+import GardenViewRoom from '../assets/Garden View Room.jpg';
+
+
   
 // SVG Icons
 const CheckIcon = () => (
@@ -59,23 +79,19 @@ const HotelLandingPage: React.FC = () => {
     const [favorites, setFavorites] = useState<number[]>([]);
     const [showAllRooms, setShowAllRooms] = useState(false);
 
-    const roomImages = [
-        'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop'
+    const roomImages = [room1 , room2, room3 ,room4
     ];
 
-    const allRooms = [
-        { name: 'Standard Room', price: 159, img: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop' },
-        { name: 'Superior Room', price: 199, img: 'https://images.unsplash.com/photo-1591088398332-8a7791972843?w=400&h=300&fit=crop' },
-        { name: 'Family Suite', price: 349, img: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=400&h=300&fit=crop' },
-        { name: 'Presidential Suite', price: 599, img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop' },
-        { name: 'Luxury Suite', price: 449, img: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop' },
-        { name: 'Business Suite', price: 299, img: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400&h=300&fit=crop' },
-        { name: 'Honeymoon Suite', price: 499, img: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=300&fit=crop' },
-        { name: 'Garden View Room', price: 249, img: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=400&h=300&fit=crop' },
-    ];
+ const allRooms = [
+    { name: 'Standard Room', price: 159, img: StandardRoom },
+    { name: 'Superior Room', price: 199, img: SuperiorRoom },
+    { name: 'Family Suite', price: 349, img: FamilySuite },
+    { name: 'Presidential Suite', price: 599, img: PresidentialSuite },
+    { name: 'Luxury Suite', price: 449, img: LuxurySuite },
+    { name: 'Business Suite', price: 299, img: BusinessSuite },
+    { name: 'Honeymoon Suite', price: 499, img: HoneymoonSuite },
+    { name: 'Garden View Room', price: 249, img: GardenViewRoom },
+];
 
     const displayedRooms = showAllRooms ? allRooms : allRooms.slice(0, 4);
 
@@ -96,7 +112,7 @@ const navigate = useNavigate();
                         <div className="grid grid-cols-2 gap-3 sm:gap-4">
                             <div className="col-span-2 relative h-[200px] sm:h-64 md:h-80 overflow-hidden rounded-2xl shadow-lg">
                                 <img
-                                    src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=500&fit=crop"
+                                    src={about1}
                                     alt="Hotel exterior"
                                     className="w-full h-full object-cover"
                                 />
@@ -108,16 +124,14 @@ const navigate = useNavigate();
                             </div>
                             <div className="h-32 sm:h-40 overflow-hidden rounded-2xl shadow-lg">
                                 <img
-                                    src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop"
+                                    src={about2}
                                     alt="Hotel lobby"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
                             <div className="h-32 sm:h-40 overflow-hidden rounded-2xl shadow-lg">
                                 <img
-                                    src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=300&fit=crop"
-                                    alt="Hotel room"
-                                    className="w-full h-full object-cover"
+                                    src={about3}
                                 />
                             </div>
                         </div>
@@ -203,8 +217,7 @@ const navigate = useNavigate();
                         <div className="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                             <div className="w-full h-44 sm:h-56 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop"
-                                    alt="Elegant Interior"
+                                    src={Elegant}
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -231,7 +244,7 @@ const navigate = useNavigate();
                         <div className="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                             <div className="w-full h-44 sm:h-56 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop"
+                                    src={gournet}
                                     alt="Gourmet Dining"
                                     className="w-full h-full object-cover"
                                 />
@@ -259,7 +272,7 @@ const navigate = useNavigate();
                         <div className="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                             <div className="w-full h-44 sm:h-56 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&h=400&fit=crop"
+                                    src={scenic}
                                     alt="Scenic Views"
                                     className="w-full h-full object-cover"
                                 />

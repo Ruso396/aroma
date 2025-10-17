@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Clock, Car, Train, Plane, Users, Star, Navigation } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import viewpoint from "../assets/viewpoint.jpg";
+import falls from "../assets/falls.webp";
+import temple from "../assets/temple.webp";
+import garden from "../assets/garden.webp";
+import masila from "../assets/masila-falls.jpg";
+import boat from "../assets/kolli hills.jpg";
+
+
 
 // Custom SVG Icons
 const CheckCircleIcon = () => (
@@ -16,7 +24,6 @@ const WalkIcon = () => (
 );
 
 export default function Location() {
-  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,42 +35,42 @@ export default function Location() {
       name: "Seekuparai Viewpoint",
       distance: "2 km",
       time: "10 minute drive",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      image: viewpoint,
       description: "Top attraction of Kolli Hills offering captivating panoramic views of dense forests and lush valleys. Also known as 'Suicide Point' due to its dramatic cliffs."
     },
     {
       name: "Agaya Gangai Waterfalls",
       distance: "8 km",
       time: "25 minute drive",
-      image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=400&h=300&fit=crop",
+      image: falls,
       description: "Spectacular 300-feet cascading waterfall meaning 'Ganges from the Sky'. Requires a trek of 1000 steps down through scenic valley views. A sacred and breathtaking sight."
     },
     {
       name: "Arapaleeswarar Temple",
       distance: "7 km",
       time: "20 minute drive",
-      image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=400&h=300&fit=crop",
+      image: temple,
       description: "Ancient hilltop temple dedicated to Lord Shiva. Rich in heritage and spiritual significance, attracting pilgrims and tourists seeking tranquility amidst scenic beauty."
     },
     {
       name: "Botanical Garden",
       distance: "3 km",
       time: "8 minute drive",
-      image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=300&fit=crop",
+      image: garden,
       description: "Beautiful garden featuring rose gardens, eco-friendly cottages, majestic viewpoints and children's park. Perfect spot for nature lovers and family outings."
     },
     {
       name: "Masila Waterfalls",
       distance: "12 km",
       time: "35 minute drive",
-      image: "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=400&h=300&fit=crop",
+      image: masila,
       description: "Serene waterfall nestled in dense forest surroundings. A perfect trekking destination offering refreshing natural beauty and peaceful atmosphere."
     },
     {
-      name: "Namma Falls",
+      name: "Boat Ride",
       distance: "5 km",
       time: "15 minute drive",
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop",
+      image: boat,
       description: "Lesser-known gem of Kolli Hills with pristine waters surrounded by lush greenery. Ideal for those seeking offbeat natural attractions and photography."
     }
   ];
@@ -98,6 +105,7 @@ export default function Location() {
       tags: ["Daily Service", "Affordable"]
     }
   ];
+
   return (
     <div className="min-h-screen bg-white mt-10">
       <style>{`
@@ -131,22 +139,6 @@ export default function Location() {
             transform: translateX(0);
           }
         }
-        @keyframes pulse-glow {
-          0%, 100% {
-            box-shadow: 0 0 20px rgba(5, 150, 105, 0.2);
-          }
-          50% {
-            box-shadow: 0 0 30px rgba(5, 150, 105, 0.4);
-          }
-        }
-        @keyframes gradient-shift {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
         .animate-fade-in-up {
           animation: fadeInUp 0.8s ease-out forwards;
         }
@@ -155,10 +147,6 @@ export default function Location() {
         }
         .animate-slide-in-right {
           animation: slideInRight 0.8s ease-out forwards;
-        }
-        .bg-animate {
-          background-size: 200% 200%;
-          animation: gradient-shift 8s ease infinite;
         }
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
@@ -172,11 +160,11 @@ export default function Location() {
 
       {/* Hero Section */}
       <section className="relative py-16 md:py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-blue-600/5 to-cyan-600/5 bg-animate"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-blue-600/5 to-cyan-600/5"></div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className={`max-w-4xl ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <div className="flex items-center gap-2 text-blue-700 mb-4">
-              <MapPin className="w-5 h-5" />
+              <MapPin className="w-5 h-5 text-blue-700" />
               <span className="font-semibold text-sm tracking-wide uppercase">Prime Location</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent leading-tight">
@@ -200,10 +188,10 @@ export default function Location() {
               </h2>
 
               <div className="space-y-6">
-                {/* 📍 Address */}
+                {/* Address */}
                 <div className="flex items-start gap-4 group">
-                  <div className="bg-blue-600 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
-                    <MapPin className="w-6 h-6 text-white" />
+                  <div className="p-3">
+                    <MapPin className="w-6 h-6 text-blue-700" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-2 text-lg">
@@ -221,10 +209,10 @@ export default function Location() {
                   </div>
                 </div>
 
-                {/* ☎️ Contact */}
+                {/* Contact */}
                 <div className="flex items-start gap-4 group">
-                  <div className="bg-blue-600 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
-                    <Phone className="w-6 h-6 text-white" />
+                  <div className="p-3">
+                    <Phone className="w-6 h-6 text-blue-700" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-2 text-lg">
@@ -242,10 +230,10 @@ export default function Location() {
                   </div>
                 </div>
 
-                {/* ✈️ Nearby Access */}
+                {/* Nearby Access */}
                 <div className="flex items-start gap-4 group">
-                  <div className="bg-blue-600 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
-                    <Plane className="w-6 h-6 text-white" />
+                  <div className="p-3">
+                    <Plane className="w-6 h-6 text-blue-700" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-2 text-lg">
@@ -258,10 +246,10 @@ export default function Location() {
                   </div>
                 </div>
 
-                {/* ⏰ Check-in Times */}
+                {/* Check-in Times */}
                 <div className="flex items-start gap-4 group">
-                  <div className="bg-blue-600 rounded-2xl p-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
-                    <Clock className="w-6 h-6 text-white" />
+                  <div className="p-3">
+                    <Clock className="w-6 h-6 text-blue-700" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-2 text-lg">
@@ -275,27 +263,23 @@ export default function Location() {
                 </div>
               </div>
 
-              {/* 🗺️ Action Buttons */}
+              {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-gray-100">
                 <a
                   href="https://maps.google.com/?q=Aroma+Resort,+Kolli+Hills,+Semmadu,+View+Point+Road"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-blue-600 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
                 >
                   View on Map
                 </a>
 
-                <button
-                  onClick={() => navigate('/room-details')}
-                  className="border-2 border-blue-600 hover:bg-blue-50 text-blue-700 px-8 py-4 rounded-full font-semibold transition-all duration-300"
-                >
+                <button className="border-2 border-blue-600 hover:bg-blue-50 text-blue-700 px-8 py-4 rounded-full font-semibold transition-all duration-300">
                   Book Now
                 </button>
               </div>
             </div>
           </div>
-
 
           {/* Map */}
           <div className="w-full h-[700px] py-3 lg:py-11">
@@ -329,15 +313,12 @@ export default function Location() {
               return (
                 <div
                   key={idx}
-                  className={`bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+                  className={`bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group border border-gray-100 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
                 >
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                      <div className="relative bg-blue-600 rounded-2xl p-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
-                        <IconComponent className="w-8 h-8 text-white" />
-                      </div>
+                    <div>
+                      <IconComponent className="w-8 h-8 text-blue-700" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 mb-1">{option.title}</h3>
@@ -351,9 +332,11 @@ export default function Location() {
                     {option.tags.map((tag, tagIdx) => (
                       <span
                         key={tagIdx}
-                        className="inline-flex items-center gap-1 text-xs bg-blue-50 text-blue-700 px-4 py-2 rounded-full font-medium border border-blue-100"
+                        className="inline-flex items-center gap-2 text-xs bg-blue-50 text-blue-700 px-4 py-2 rounded-full font-medium border border-blue-100"
                       >
-                        <CheckCircleIcon />
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
                         {tag}
                       </span>
                     ))}
@@ -379,7 +362,7 @@ export default function Location() {
             {attractions.map((attraction, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+                className={`bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group border border-gray-100 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${0.7 + index * 0.1}s` }}
               >
                 <div className="relative overflow-hidden h-56">
@@ -399,7 +382,9 @@ export default function Location() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{attraction.name}</h3>
                   <div className="flex items-center gap-2 text-blue-600 mb-4 font-medium">
-                    <WalkIcon />
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
                     <span className="text-sm">{attraction.time}</span>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed">{attraction.description}</p>
@@ -412,7 +397,6 @@ export default function Location() {
         {/* CTA Section */}
         <div className={`mt-20 ${isVisible ? 'animate-fade-in-up delay-800' : 'opacity-0'}`}>
           <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-700 rounded-3xl p-10 sm:p-16 shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 bg-animate opacity-20" style={{ backgroundImage: 'linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent)' }}></div>
             <div className="relative z-10 text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                 Ready to Experience Our Prime Location?
