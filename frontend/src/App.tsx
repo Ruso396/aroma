@@ -11,8 +11,7 @@ import Location from './pages/Location';
 import HotelBooking from './pages/HotelBooking';
 import RoomDetails from './pages/RoomDetails';
 import Amenities from './pages/Amenities';
-import Login from './pages/Login';
-import Register from './pages/Register';
+
 
 
 
@@ -53,9 +52,7 @@ const App: React.FC = () => {
             <Route path="/location" element={<Location />} />
             <Route path="/booking" element={<HotelBooking />} />
             <Route path="/room-details" element={<RoomDetails />} />
-            <Route path="/reg" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-
+            
             {/* fallback route */}
             <Route path="*" element={<HomePage />} />
           </Routes>
